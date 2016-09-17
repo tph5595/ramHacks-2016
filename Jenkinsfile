@@ -1,11 +1,14 @@
 node {
    stage('Preparation') {
+      step([$class: 'GitHubSetCommitStatusBuilder'])
       sh "rm App/*.class"
    }
    stage('Build') {
       sh "javac App/*.java"
+      sh "java App/main.class"
    }
    stage('Results') {
-     mail bcc: '', body: 'ramHacks-2016 failed to pass the Jenkins test! Please go to the repo at https://github.com/tph5595/ramHacks-2016.git to resolve to issue', cc: '', from: '', replyTo: '', subject: 'BUILD FAIL', to: 'tph5595@verizon.net'
+      step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'tph5595@verizon.net', sendToIndividuals: true])
+      step([$class: 'WsCleanup'])
    }
 }
