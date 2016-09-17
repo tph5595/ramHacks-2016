@@ -87,7 +87,12 @@ Fact.prototype.intentHandlers = {
     },
 
     "DumbStuff": function (intent, session, response) {
-        response.tellWithCard(response, "Hello World", response);
+        var ws = new WebSocket("ws://localhost:9998/echo");
+        ws.onopen = function(){
+            ws.send("Message to send");
+            alert("Message is sent...");
+        };
+        response.tellWithCard("Hello hackers", "Hello World", "Hello hackers");
     },
 
     "AMAZON.HelpIntent": function (intent, session, response) {
