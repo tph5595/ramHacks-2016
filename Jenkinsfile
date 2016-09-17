@@ -1,5 +1,6 @@
 node {
    stage('Preparation') {
+      step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'tph5595@verizon.net', sendToIndividuals: true])
       echo 'Pulling latest code'
       //checkout scm
       echo 'changing status to pending'
@@ -25,7 +26,7 @@ node {
       }*/
    }
    stage('Results') {
-      step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'tph5595@verizon.net', sendToIndividuals: true])
+
       echo 'Cleaning up'
       step([$class: 'WsCleanup'])
    }
