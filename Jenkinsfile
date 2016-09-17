@@ -14,7 +14,7 @@ node {
    }
    stage('Build') {
       if (isUnix()) {
-        sh "ls App/"
+        sh "ls"
         //sh "zip App/spaceGeek/src/*"
       /*   sh "javac App/*.java"
          echo 'Successful compile'
