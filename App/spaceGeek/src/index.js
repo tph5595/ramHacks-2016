@@ -53,7 +53,7 @@ var AlexaSkill = require('./AlexaSkill');
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript#Inheritance
  */
-var Fact = function () {
+var Fact = function() {
     AlexaSkill.call(this, APP_ID);
 };
 
@@ -61,50 +61,55 @@ var Fact = function () {
 Fact.prototype = Object.create(AlexaSkill.prototype);
 Fact.prototype.constructor = Fact;
 
-Fact.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
+Fact.prototype.eventHandlers.onSessionStarted = function(sessionStartedRequest, session) {
     //console.log("onSessionStarted requestId: " + sessionStartedRequest.requestId + ", sessionId: " + session.sessionId);
     // any initialization logic goes here
 };
 
-Fact.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-  console.log("HelloWorld onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
-  var speechOutput = "Which mlh hackathon would you like to hear about?";
-  //var repromptText = "I said Loading Celery man";
-  response.ask(speechOutput, speechOutput);
+Fact.prototype.eventHandlers.onLaunch = function(launchRequest, session, response) {
+    console.log("HelloWorld onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
+    var speechOutput = "Which mlh hackathon would you like to hear about?";
+    //var repromptText = "I said Loading Celery man";
+    response.ask(speechOutput, speechOutput);
 };
 
 /**
  * Overridden to show that a subclass can override this function to teardown session state.
  */
-Fact.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
+Fact.prototype.eventHandlers.onSessionEnded = function(sessionEndedRequest, session) {
     //console.log("onSessionEnded requestId: " + sessionEndedRequest.requestId + ", sessionId: " + session.sessionId);
     // any cleanup logic goes here
 };
 
 Fact.prototype.intentHandlers = {
-    "GetNewFactIntent": function (intent, session, response) {
+    "GetNewFactIntent": function(intent, session, response) {
         handleNewFactRequest(response);
     },
 
-    "DumbStuff": function (intent, session, response) {
-        var ws = new WebSocket("ws://localhost:8090/");
-        ws.onopen = function(){
-            ws.send("Message to send");
-            alert("Message is sent...");
-        };
+    "DumbStuff": function(intent, session, response) {
+        if ("WebSocket" in window) {
+            var ws = new WebSocket("ws://localhost:8090/");
+            ws.onopen = function() {
+                ws.send("Message to send");
+                alert("Message is sent...");
+            };
+        } else {
+            // The browser doesn't support WebSocket
+            alert("WebSocket NOT supported by your Browser!");
+        }
         response.tellWithCard("Hello hackers", "Hello World", "Hello hackers");
     },
 
-    "AMAZON.HelpIntent": function (intent, session, response) {
+    "AMAZON.HelpIntent": function(intent, session, response) {
         response.ask("Name the hackathon you wish to here the schedule for", "What schedule would you like?");
     },
 
-    "AMAZON.StopIntent": function (intent, session, response) {
+    "AMAZON.StopIntent": function(intent, session, response) {
         var speechOutput = "Happy hacking";
         response.tell(speechOutput);
     },
 
-    "AMAZON.CancelIntent": function (intent, session, response) {
+    "AMAZON.CancelIntent": function(intent, session, response) {
         var speechOutput = "Happy hacking";
         response.tell(speechOutput);
     }
@@ -125,7 +130,7 @@ function handleNewFactRequest(response) {
 }
 
 // Create the handler that responds to the Alexa Request.
-exports.handler = function (event, context) {
+exports.handler = function(event, context) {
     // Create an instance of the SpaceGeek skill.
     var fact = new Fact();
     fact.execute(event, context);
