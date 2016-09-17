@@ -68,7 +68,7 @@ Fact.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest,
 
 Fact.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
     //console.log("onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
-    response.tell("how is it going my nigga");
+    response.tell("whats up my nigga");
     handleNewFactRequest(response);
 };
 
