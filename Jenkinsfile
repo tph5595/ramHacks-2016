@@ -7,8 +7,8 @@ node {
       echo 'deleting old executables'
     /*  if (isUnix()) {
          sh "rm App/*.class"
-      }else{
-         bat "del App/*.class"
+      }else{*/
+         bat "del App/*.class"/*
       }*/
    }
    stage('Build') {
