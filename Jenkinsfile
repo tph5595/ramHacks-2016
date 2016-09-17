@@ -1,7 +1,7 @@
 node {
    stage('Preparation') {
       echo 'Pulling latest code'
-      checkout scm
+      //checkout scm
       echo 'changing status to pending'
       step([$class: 'GitHubSetCommitStatusBuilder'])
       echo 'deleting old executables'
