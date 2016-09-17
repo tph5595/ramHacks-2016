@@ -85,6 +85,10 @@ Fact.prototype.intentHandlers = {
         handleNewFactRequest(response);
     },
 
+    "DumbStuff": function (intent, session, response) {
+        response.tell("what the fuck do you want?");
+    },
+
     "AMAZON.HelpIntent": function (intent, session, response) {
         response.ask("You can say tell me a space fact, or, you can say exit... What can I help you with?", "What can I help you with?");
     },

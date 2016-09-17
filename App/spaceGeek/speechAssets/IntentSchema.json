@@ -4,6 +4,9 @@
       "intent": "GetNewFactIntent"
     },
     {
+      "intent": "DumbStuff"
+    },
+    {
       "intent": "AMAZON.HelpIntent"
     },
     {
