@@ -26,7 +26,7 @@ node {
    }
    stage('Results') {
       step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'tph5595@verizon.net', sendToIndividuals: true])
-      echo 'Cleaning upP'
-      step([$class: 'WsCleanup'])P
+      echo 'Cleaning up'
+      step([$class: 'WsCleanup'])
    }
 }
