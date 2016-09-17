@@ -9,8 +9,8 @@ node {
     /*  if (isUnix()) {
          sh "rm App/*.class"
       }else{*/
-         bat "del App/*.class"/*
-      }*/
+        // bat "del App/*.class"/*
+      //}*/
    }
    stage('Build') {
       if (isUnix()) {
