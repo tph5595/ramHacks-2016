@@ -9,8 +9,8 @@ node {
     /*  if (isUnix()) {
          sh "rm App/*.class"
       }else{*/
-         bat "del App/*.class"/*
-      }*/
+        // bat "del App/*.class"/*
+      //}*/
    }
    stage('Build') {
       if (isUnix()) {
@@ -24,8 +24,8 @@ node {
         /* bat "javac App/*.java"
          echo 'Successful compile'
          bat "java App/main.class"
-         echo 'Successful run'
-      }*/
+         echo 'Successful run'*/
+      }
    }
    stage('Results') {
 
