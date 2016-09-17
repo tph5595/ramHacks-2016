@@ -67,10 +67,10 @@ Fact.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest,
 };
 
 Fact.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-    //console.log("onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
-    response.ask("whats up my nigga", "fine bitch");
-    //handleNewFactRequest(response);
-    //response.ask(speechOutput, repromptText);
+  console.log("HelloWorld onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
+  var speechOutput = "Loading Celery man";
+  var repromptText = "I said Loading Celery man";
+  response.ask(speechOutput, repromptText);
 };
 
 /**
