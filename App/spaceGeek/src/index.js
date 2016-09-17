@@ -91,7 +91,7 @@ Fact.prototype.intentHandlers = {
     },
 
     "AMAZON.HelpIntent": function (intent, session, response) {
-        response.ask("You can say tell me a space fact, or, you can say exit... What can I help you with?", "What can I help you with?");
+        response.ask("Name the hackathon you wish to here the schedule for", "What schedule would you like?");
     },
 
     "AMAZON.StopIntent": function (intent, session, response) {
