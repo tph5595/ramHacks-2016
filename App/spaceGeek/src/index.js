@@ -95,12 +95,12 @@ Fact.prototype.intentHandlers = {
     },
 
     "AMAZON.StopIntent": function (intent, session, response) {
-        var speechOutput = "Goodbye";
+        var speechOutput = "Happy hacking";
         response.tell(speechOutput);
     },
 
     "AMAZON.CancelIntent": function (intent, session, response) {
-        var speechOutput = "Goodbye";
+        var speechOutput = "Happy hacking";
         response.tell(speechOutput);
     }
 };
