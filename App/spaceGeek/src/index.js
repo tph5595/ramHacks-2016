@@ -93,11 +93,12 @@ Fact.prototype.intentHandlers = {
                 ws.send("Message to send");
                 alert("Message is sent...");
             };
+            response.tellWithCard("working", "Hello World", "working");
         } else {
             // The browser doesn't support WebSocket
-            alert("WebSocket NOT supported by your Browser!");
+            response.tellWithCard("no working", "Hello World", "no working");
         }
-        response.tellWithCard("Hello hackers", "Hello World", "Hello hackers");
+
     },
 
     "AMAZON.HelpIntent": function(intent, session, response) {
