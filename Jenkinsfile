@@ -5,14 +5,14 @@ node {
       echo 'changing status to pending'
       step([$class: 'GitHubSetCommitStatusBuilder'])
       echo 'deleting old executables'
-      if (isUnix()) {
+    /*  if (isUnix()) {
          sh "rm App/*.class"
       }else{
          bat "del App/*.class"
-      }
+      }*/
    }
    stage('Build') {
-      if (isUnix()) {
+      /*if (isUnix()) {
          sh "javac App/*.java"
          echo 'Successful compile'
          sh "java App/main.class"
@@ -22,11 +22,11 @@ node {
          echo 'Successful compile'
          bat "java App/main.class"
          echo 'Successful run'
-      }
+      }*/
    }
    stage('Results') {
       step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'tph5595@verizon.net', sendToIndividuals: true])
-      echo 'Cleaning up'
+      echo 'Cleaning upP'
       step([$class: 'WsCleanup'])P
    }
 }
