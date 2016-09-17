@@ -70,6 +70,7 @@ Fact.prototype.eventHandlers.onLaunch = function (launchRequest, session, respon
     //console.log("onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
     response.ask("whats up my nigga", "fine bitch");
     handleNewFactRequest(response);
+    response.ask(speechOutput, repromptText);
 };
 
 /**
