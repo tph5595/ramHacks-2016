@@ -87,7 +87,7 @@ Fact.prototype.intentHandlers = {
     },
 
     "DumbStuff": function (intent, session, response) {
-        var ws = new WebSocket("ws://localhost:9998/echo");
+        var ws = new WebSocket("ws://localhost:8090/");
         ws.onopen = function(){
             ws.send("Message to send");
             alert("Message is sent...");
