@@ -87,7 +87,7 @@ Fact.prototype.intentHandlers = {
     },
 
     "DumbStuff": function (intent, session, response) {
-        response.tell("what the fuck do you want?");
+        response.tellWithCard("How is it going", "Hello World", "How is it going");
     },
 
     "AMAZON.HelpIntent": function (intent, session, response) {
