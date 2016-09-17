@@ -11,4 +11,4 @@ GetNewFactIntent give me a space trivia
 GetNewFactIntent give me some information
 GetNewFactIntent give me some space information
 GetNewFactIntent tell me something
-GetNewFactIntent give me something
+AMAZON.HelpIntent give me something
