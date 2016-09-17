@@ -1,6 +1,6 @@
 node {
    stage('Preparation') {
-   checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'jenkinsTesting/']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'n1', url: 'https://github.com/tph5595/ramHacks-2016.git']]])
+      checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'jenkinsTesting/']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'n1', url: 'https://github.com/tph5595/ramHacks-2016.git']]])
       step([$class: 'GitHubSetCommitStatusBuilder'])
       sh "rm App/*.class"
    }
