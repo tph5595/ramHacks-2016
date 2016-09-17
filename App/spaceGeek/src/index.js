@@ -68,9 +68,9 @@ Fact.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest,
 
 Fact.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
   console.log("HelloWorld onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
-  var speechOutput = "Loading Blue Panda";
+  var speechOutput = "Which hackathon would you like to hear about?";
   var repromptText = "I said Loading Celery man";
-  response.ask(speechOutput, repromptText);
+  response.ask(speechOutput, speechOutput);
 };
 
 /**
