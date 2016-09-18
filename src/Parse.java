@@ -1,8 +1,8 @@
 /*
  * This program will:
- * 1.	Take html file(s) as input
- * 2.	Parse html file for schedule and hackathon name
- * 3.	write to hackathon name the parsed schedule
+ * 1.	Take URL as input to parse it for the hackathon name
+ * 2.	Take html file(s) as input for schedule
+ * 3.	write to hackathonName.txt the parsed schedule
  */
 import java.io.*;
 import java.net.URL;
@@ -19,7 +19,7 @@ public class Parse {
 		StringBuilder endBuilder = new StringBuilder();
 		String regexMonthFinder = "(([Jj]anuary)|([Ff]ebuary)|([Mm]arch)|([Aa]pril)|([Mm]ay)|([Jj]une)|([Jj]uly)|([Aa]ugust)|([Ss]ept(ember)?)|([Oo]ctober)|([Nn]ovember)|([Dd]ecember)) [0-3][0-9]";
 		Pattern p = Pattern.compile(regexMonthFinder);
-		//File inFile = null;
+		File inFile = null;
 		URL inURL = null;
 		String line = null;
 		boolean first = true;
@@ -27,21 +27,21 @@ public class Parse {
 
 		// opening the file stuff and putting into a string
 		if (0 < args.length) {
-			//inFile = new File(args[0]);
+			inFile = new File(args[1]);
 			inURL = new URL(args[0]);
 		} else {
 			System.err.println("Invalid arguments count:" + args.length);
 			System.exit(0);
 		}
-		//FileReader fileReader = null;
-		BufferedReader in = null;
+		FileReader fileReader = null;
+		//BufferedReader in = null;
 		try {
-			//fileReader = new FileReader(inFile);
-			in = new BufferedReader((new InputStreamReader(inURL.openStream())));
+			fileReader = new FileReader(inFile);
+			//in = new BufferedReader((new InputStreamReader(inURL.openStream())));
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
-		BufferedReader bufferedReader = new BufferedReader(in);
+		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		try {
 			while ((line = bufferedReader.readLine()) != null) {
 				//System.out.println("making sb");
@@ -114,6 +114,10 @@ public class Parse {
 					if (!notEndSequence(inputIndex)) {
 						endBuilder.append(".");
 						//System.out.println(endBuilder.toString());
+						endBuilder.append(input.charAt(inputIndex));
+						PrintWriter writer = new PrintWriter(hackathonName + ".txt", "UTF-8");
+				        writer.println(endBuilder.toString());
+				        writer.close();
 						System.exit(0);
 					}
 				}
@@ -173,7 +177,6 @@ public class Parse {
 					}
 					while (input.charAt(inputIndex) != '<') {
 						//System.out.println("adding details");
-						endBuilder.append(input.charAt(inputIndex));
 						inputIndex++;
 					}
 				}
