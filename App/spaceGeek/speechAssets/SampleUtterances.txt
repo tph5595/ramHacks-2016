@@ -18,7 +18,8 @@ HackathonName whats going on at {hackName}
 HackathonName well {hackName} seems pretty awesome
 HackathonName tell me about {hackName}
 HackathonName what does the schedule look like for {hackName}
-
+Fucker fuck you
+Fucker fuck off
 DontHearNoMore no
 DontHearNoMore nope
 DontHearNoMore no thanks
@@ -34,6 +35,3 @@ GetNextEventIntent yes please
 GetNextEventIntent why not
 GetNextEventIntent mm
 GetNextEventIntent i guess so
-
-Fucker fuck you
-Fucker fuck off  
