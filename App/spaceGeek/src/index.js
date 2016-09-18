@@ -233,7 +233,7 @@ Fact.prototype.intentHandlers = {
             response.ask("unable to add " + lookupCategory + " to your calendar", "Would you like to look up another hackathon?");
         });
         //TODO need to parse more here
-        url = "http://45.55.81.231:8080/p?name=" + lookupCategory.toString();
+        url = "http://45.55.81.231:8081/p?name=" + lookupCategory.toString();
         http.get(url, function(res) {
             //response.tell("fuck off");
             var body = '';
