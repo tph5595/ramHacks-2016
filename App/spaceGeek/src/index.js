@@ -142,7 +142,7 @@ Fact.prototype.eventHandlers.onLaunch = function(launchRequest, session, respons
  * Overridden to show that a subclass can override this function to teardown session state.
  */
 Fact.prototype.eventHandlers.onSessionEnded = function(sessionEndedRequest, session) {
-    //console.log("onSessionEnded requestId: " + sessionEndedRequest.requestId + ", sessionId: " + session.sessionId);
+    console.log("onSessionEnded requestId: " + sessionEndedRequest.requestId + ", sessionId: " + session.sessionId);
     // any cleanup logic goes here
 };
 
