@@ -28,6 +28,21 @@
             "intent": "AMAZON.StopIntent"
         },
         {
+            "intent": "hackisu"
+        },
+        {
+            "intent": "ramhacks"
+        },
+        {
+            "intent": "lumohacks"
+        },
+        {
+            "intent": "bigredhacks"
+        },
+        {
+            "intent": "hackthenorth"
+        },
+        {
             "intent": "AMAZON.CancelIntent"
         },
         {
