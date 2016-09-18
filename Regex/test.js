@@ -1,3 +1,7 @@
+/**
+ * Variable defining the length of the delimiter between events
+ */
+var delimiterSize = 2;
 var https = require('https');
 var stringResult;
 var url = "https://ramhacks.vcu.edu/";
