@@ -3,7 +3,7 @@
  */
 var delimiterSize = 2;
 var https = require('https');
-var stringResult;
+var stringResult = "before";
 var url = "https://ramhacks.vcu.edu/";
 https.get(url, function(res) {
     var body = '';
@@ -16,7 +16,7 @@ https.get(url, function(res) {
         stringResult = parseJson(body);
         //eventCallback(stringResult);
     });
-    console.log(stringResult);
+    console.log(body);
 }).on('error', function(e) {
     console.log("Got error: ", e);
 });
