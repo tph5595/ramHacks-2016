@@ -20,7 +20,6 @@ HackathonName tell me about {hackName}
 HackathonName what does the schedule look like for {hackName}
 fucker fuck you
 fucker fuck off
-fucker bitch
 DontHearNoMore no
 DontHearNoMore nope
 DontHearNoMore no thanks
