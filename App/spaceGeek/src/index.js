@@ -82,25 +82,25 @@ Fact.prototype.eventHandlers.onSessionEnded = function(sessionEndedRequest, sess
 };
 
 Fact.prototype.intentHandlers = {
-        "GetNewFactIntent": function(intent, session, response) {
-            handleNewFactRequest(response);
-        },
+    "GetNewFactIntent": function(intent, session, response) {
+        handleNewFactRequest(response);
+    },
 
-        "DumbStuff": function(intent, session, response) {
+    "DumbStuff": function(intent, session, response) {
 
-            //if ("WebSocket" in window) {
-            //  response.tell("About to test socket");
-            var ws = new WebSocket("ws://127.0.0.1:8090/");
-            response.tell("About to test socket");
-            ws.onopen = function() {
-                ws.send("Message to send");
-                //      alert("Message is sent...");
-            };
-            response.tellWithCard("working", "Hello World", "working");
-            //  } else {
-            // The browser doesn't support WebSocket
-            //  response.tellWithCard("no working", "Hello World", "no working");
-        }
+        //if ("WebSocket" in window) {
+        //  response.tell("About to test socket");
+        var ws = new WebSocket("ws://127.0.0.1:8090/");
+        response.tell("About to test socket");
+        ws.onopen = function() {
+            ws.send("Message to send");
+            //      alert("Message is sent...");
+        };
+        response.tellWithCard("working", "Hello World", "working");
+        //  } else {
+        // The browser doesn't support WebSocket
+        //  response.tellWithCard("no working", "Hello World", "no working");
+        //  }
 
     },
 
