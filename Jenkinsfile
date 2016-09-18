@@ -18,7 +18,7 @@ node {
         dir ('/Users/taylor/ramHacks-2016/'){
           sh "python App/test.py"
           //sh "zip -r App/SpaceGeek/src/master App/spaceGeek/src/*.js"
-          if(fileExists ('App/spaceGeek/*.zip')){
+          if(fileExists ('App/spaceGeek/src/*.zip')){
             sh "rm App/spaceGeek/src/*.zip"
           }
           sh "zip -r App/SpaceGeek/src/master App/spaceGeek/src/*"
