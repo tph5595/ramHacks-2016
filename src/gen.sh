@@ -1,10 +1,10 @@
 #!/bin/bash
 #!/bin/bash
 # Delete all containers
-docker rm $(docker ps -a -q)
+#docker rm $(docker ps -a -q)
 # Delete all images
-docker rmi $(docker images -q)
-docker build tph5595:v1 .
+#docker rmi $(docker images -q)
+#docker build tph5595:v1 .
 rm index.*
 rm *.txt
 rm *.class
