@@ -5,7 +5,7 @@ var delimiterSize = 2;
 var https = require('https');
 var http = require('http');
 var stringResult = "before";
-var url = "https://ramhacks.vcu.edu/";
+var url = "https://www.bigredhacks.com/";
 https.get(url, function(res) {
     var body = "";
 
@@ -18,7 +18,7 @@ https.get(url, function(res) {
         stringResult = parseJson(body);
         //eventCallback(stringResult);
     });
-    console.log(body);
+    console.log(parseJson(body));
 }).on('error', function(e) {
     console.log("Got error: ", e);
 });
