@@ -13,3 +13,4 @@ GetNewFactIntent give me some space information
 GetNewFactIntent tell me something
 AMAZON.HelpIntent give me something
 DumbStuff ram hacks
+HackathonName {HACKATHON_NAMES}
