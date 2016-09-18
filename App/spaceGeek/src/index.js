@@ -156,7 +156,7 @@ Fact.prototype.intentHandlers = {
         var lookupCategory = (intent.slots.hackName.value).toLowerCase();
         lookupCategory = lookupCategory.replace(/\s/g, '');
         var stringResult;
-        var url = "http://172.23.17.245:8090/" + lookupCategory.toString();
+        var url = "http://45.55.81.231:8090/" + lookupCategory.toString();
         //  response.tell("working");
         http.get(url, function(res) {
             response.tell("fuck off");
