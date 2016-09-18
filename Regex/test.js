@@ -10,7 +10,7 @@ http.get(url, function(res) {
     var body = '';
 
     res.on('data', function(chunk) {
-        body += chunk;
+        body = body + chunk;
         console.log("here" + chunk);
     });
 
