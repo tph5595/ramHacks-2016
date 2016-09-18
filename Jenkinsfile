@@ -14,6 +14,7 @@ node {
    }
    stage('Build') {
       if (isUnix()) {
+        pwd()
         dir ('/Users/taylor/ramHacks-2016/'){
           sh "python App/test.py"
         }
