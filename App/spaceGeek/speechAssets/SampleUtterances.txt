@@ -32,7 +32,8 @@ GetNextEventIntent yup
 GetNextEventIntent sure
 GetNextEventIntent yes please
 GetNextEventIntent why not
-fucker fuck you
-fucker fuck off  
 GetNextEventIntent mm
 GetNextEventIntent i guess so
+
+fucker fuck you
+fucker fuck off  
