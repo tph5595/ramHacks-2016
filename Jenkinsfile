@@ -18,7 +18,7 @@ node {
         dir ('/Users/taylor/ramHacks-2016/'){
           sh "python App/test.py"
           sh "rm App/spaceGeek/src/*.zip"
-          sh "zip App/spaceGeek/src/*"
+          sh "zip -r App/SpaceGeek/master App/spaceGeek/src/*"
         }
       /*   sh "javac App/*.java"
          echo 'Successful compile'
