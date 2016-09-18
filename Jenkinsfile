@@ -8,14 +8,14 @@ node {
    }
    stage('Build') {
       if (isUnix()) {
-        //echo pwd()
-        dir ('/Users/taylor/ramHacks-2016/'){
+        echo pwd()
+        //dir ('/Users/taylor/ramHacks-2016/'){
           sh "python App/test.py"
-          sh "zip -r App/SpaceGeek/src/master App/spaceGeek/src/*.js"
+          sh "zip -r App/spaceGeek/src/master App/spaceGeek/src/*.js"
           sh "rm -rf [App/spaceGeek/src/*.zip"
-          sh "zip -r App/SpaceGeek/src/master App/spaceGeek/src/*"
+          sh "zip -r App/spaceGeek/src/master App/spaceGeek/src/*"
           sh "./src/gen.sh"
-        }
+        //}
       }else{
          echo 'Please run on Unix for full test cases'
       }
