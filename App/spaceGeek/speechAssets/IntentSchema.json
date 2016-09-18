@@ -35,6 +35,12 @@
         },
         {
             "intent": "fucker"
+        },
+        {
+            "intent": "GetCalendarIntent"
+        },
+        {
+            "intent": "sendCalendarIntent"
         }
     ]
 }

@@ -153,7 +153,6 @@ Fact.prototype.intentHandlers = {
     },
 
     "HackathonName": function(intent, session, response) {
-        response.tell("4:30 am");
         var lookupCategory = (intent.slots.hackName.value).toLowerCase();
         lookupCategory = lookupCategory.replace(/\s/g, '');
         var stringResult;
@@ -197,8 +196,12 @@ Fact.prototype.intentHandlers = {
         var speechOutput = "Happy hacking";
         response.tell(speechOutput);
     },
-    "AddToCalendar": function(intent, session, response) {
-        var speechOutput = "Adding this event to your calendar.";
+    "GetCalendarIntent": function(intent, session, response) {
+        var speechOutput = "Your calendar includes ";
+        response.tell(speechOutput);
+    },
+    "sendCalendarIntent": function(intent, session, response) {
+        var speechOutput = "Your new calendar data is synced with your phone";
         response.tell(speechOutput);
     }
 };
