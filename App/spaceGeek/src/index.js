@@ -90,7 +90,7 @@ Fact.prototype.intentHandlers = {
 
         //if ("WebSocket" in window) {
         //  response.tell("About to test socket");
-        var ws = new WebSocket("ws://localhost:8090/");
+        var ws = new WebSocket("ws://127.0.0.1:8090/");
         response.tell("About to test socket");
         ws.onopen = function() {
             ws.send("Message to send");
