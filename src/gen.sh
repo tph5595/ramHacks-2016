@@ -1,4 +1,5 @@
 #!/bin/bash
+rm index.h*
 rm *.class
 javac *.java
 java getIt

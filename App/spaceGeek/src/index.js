@@ -197,7 +197,7 @@ Fact.prototype.intentHandlers = {
         response.tell(speechOutput);
     },
     "GetCalendarIntent": function(intent, session, response) {
-        var speechOutput = "Your calendar";
+        var speechOutput = "Your calendar includes ";
         response.tell(speechOutput);
     },
     "sendCalendarIntent": function(intent, session, response) {
