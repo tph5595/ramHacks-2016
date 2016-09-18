@@ -3,9 +3,10 @@
  */
 var delimiterSize = 2;
 var https = require('https');
+var http = require('http');
 var stringResult = "before";
-var url = "https://ramhacks.vcu.edu/";
-https.get(url, function(res) {
+var url = "http://ramhacks.vcu.edu/";
+http.get(url, function(res) {
     var body = '';
 
     res.on('data', function(chunk) {
