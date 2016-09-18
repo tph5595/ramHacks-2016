@@ -226,7 +226,7 @@ Fact.prototype.intentHandlers = {
 
             res.on('end', function() {
                 stringResult = parseJson(body);
-                //  response.ask(lookupCategory + " was added to your calendar. Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
+                response.ask(lookupCategory + " was added to your calendar. Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
             });
         }).on('error', function(e) {
             console.log("Got error: ", e);
