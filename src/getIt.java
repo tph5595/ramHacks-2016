@@ -4,43 +4,28 @@
  * 2.	Find all hackathon URLs
  * 3.	Write all URLs to URLS.txt file to get parsed by Parse.java
  */
+import java.util.*;
 import java.util.regex.*;
+import java.io.*;
 public class getIt {
 
-	public static final String REGULAR_EXPRESSION = "(http|https)://.*(com|io|edu|org)";
+	public static final String REGULAR_EXPRESSION_1 = "(http|ftp|https)://([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:/~+#-]*?[\\w@?^=%&/~+#-])?";
+	public static final String REGULAR_EXPRESSION_2 = "(s3\\.amazon|schema|facebook|twitter|https://mlh\\.io|oss\\.maxcdn|hackcon|dell|microsoft|instagram|cloudfront)";
 	public static Pattern pattern;
 	public static Matcher matcher;
+	public String input = "";
+	public String tempFile = "";
 			
-	public getIt(String input)
-	{
-		this.input = input;
-	}
-	
-	public String nextToken()
-	{
-		if(input.length() == 0)
-			return null;
-		String temp = "";
-		pattern = Pattern.compile(REGULAR_EXPRESSION);
-		matcher = pattern.matcher(input);
-		if(matcher.lookingAt())
-		{
-			temp = matcher.group(0);
-			input = input.substring(matcher.end(),input.length());
-			return temp;
-		}
-		return null;
-	}
-			
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		
 		StringBuilder inputBuilder = new StringBuilder();
 		File inFile = null;
 		String input = "";
         String line = null;
         String temp = "";
+        String match = "";
+        ArrayList<String> urlList = new ArrayList<String>();
         
-        File inFile = null;
         if (0 < args.length)
         {
            inFile = new File(args[0]);
@@ -49,7 +34,7 @@ public class getIt {
         {
            System.err.println("Invalid arguments count:" + args.length);
            System.exit(0);
-        }	        
+        } 
         FileReader fileReader = new FileReader(inFile);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         try
@@ -67,29 +52,25 @@ public class getIt {
         }
         
         StringBuilder sb = new StringBuilder();
-        
-        getIt tokenizer = new getIt(input);
-        while(input!= null && input.length() > 0)
-        {
-        	input = tokenizer.nextToken();
-        	sb.append(input);
-        	sb.append("\n");
+        temp = input;
+		pattern = Pattern.compile(REGULAR_EXPRESSION_1);
+		matcher = pattern.matcher(temp);
+        while(matcher.find())
+        {   		
+			match = matcher.group();
+			System.out.println(match);
+			urlList.add(match);
         }
         
-        File outFile = null;
-        if (0 < args.length)
-           outFile = new File(args[1]);
-        else
+        pattern = Pattern.compile(REGULAR_EXPRESSION_2);
+        for(int i = 0; i < urlList.size(); i++)
         {
-           System.err.println("Invalid arguments count:" + args.length);
-           System.exit(0);
-        }	        
-        FileWriter fileWriter = new FileWriter(outFile);
-        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        bufferedWriter.write(sb.toString());
-        bufferedWriter.close();
-        System.out.println(sb.toString());
-       
+        		sb.append(urlList.get(i));
+        		sb.append("\n");
+        		
+        }
+        PrintWriter writer = new PrintWriter("urls.txt", "UTF-8");
+        writer.println(sb.toString());
+        writer.close();
 	}
-
 }
