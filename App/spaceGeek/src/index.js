@@ -229,6 +229,7 @@ Fact.prototype.intentHandlers = {
         var lookupCategory = (intent.slots.hackName.value).toLowerCase();
         lookupCategory = lookupCategory.replace(/\s/g, '');
         var stringResult;
+        response.ask(lookupCategory + " was added to your calendar. Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
         var url = "http://45.55.81.231:8080/" + lookupCategory.toString() + ".txt";
         //  response.tell("working");
         http.get(url, function(res) {
