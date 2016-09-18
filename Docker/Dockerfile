@@ -10,5 +10,4 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN echo 'node server.js' >> /etc/rc.local
 RUN apt-get install -y python
 RUN echo 'python gen.py' >> /etc/rc.local
-RUN cd /ramHacks/src/
-RUN ./gen.sh
+RUN  /ramHacks-2016/src/gen.sh
