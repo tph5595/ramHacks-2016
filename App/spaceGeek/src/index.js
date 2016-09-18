@@ -88,17 +88,17 @@ Fact.prototype.intentHandlers = {
 
     "DumbStuff": function(intent, session, response) {
 
-        if ("WebSocket" in window) {
-            response.tell("About to test socket");
-            var ws = new WebSocket("ws://localhost:8090/");
-            ws.onopen = function() {
-                ws.send("Message to send");
-                alert("Message is sent...");
-            };
+        //if ("WebSocket" in window) {
+        //  response.tell("About to test socket");
+        var ws = new WebSocket("ws://localhost:8090/");
+        ws.onopen = function() {
+            ws.send("Message to send");
+            //      alert("Message is sent...");
+            //  };
             response.tellWithCard("working", "Hello World", "working");
-        } else {
+            //  } else {
             // The browser doesn't support WebSocket
-            response.tellWithCard("no working", "Hello World", "no working");
+            //  response.tellWithCard("no working", "Hello World", "no working");
         }
 
     },
