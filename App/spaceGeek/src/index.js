@@ -33,121 +33,122 @@ var delimiterSize = 2;
  * All of the good good stuff
  */
 var NAME_TO_FILE = {
-        "hackmty": "bigredhacks"
-        "hackthenorth"
-        "hackisu"
-        "lumohacks"
-        "ramhacks"
-        "hackgt"
-        "medhacks"
-        "hackcooper"
-        "hackdartmouththree"
-        "hackdartmouth3"
-        "hackdartmouththethird"
-        "hackdartmouthiii"
-        "sdhacks"
-        "volhacks"
-        "hackumbc"
-        "healthhacks"
-        "tamuhack"
-        "tamuhack"
-        "whack"
-        "hackumassiv"
-        "hackumassthefourth"
-        "hackumassfour"
-        "hackumass4"
-        "hackustate"
-        "hackustate"
-        "kenthackenough"
-        "mhacks8"
-        "hackny"
-        "revolutionuc"
-        "hackrice"
-        "hackwesternthree"
-        "hackwestern3"
-        "quackcon"
-        "quackcon"
-        "dubhacks"
-        "dubhacks"
-        "hackriddle"
-        "hackriddle"
-        "citrushack"
-        "fishhacks"
-        "fishhacks"
-        "hackgsu"
-        "hackgsu"
-        "hackharvard"
-        "ycphacks"
-        "ycphacks"
-        "hackru"
-        "hackru"
-        "hackru"
-        "hacktx"
-        "hacktx"
-        "miagamejam"
-        "miagamejam"
-        "miamigamejam"
-        "hacknc"
-        "hacknc"
-        "hacknc"
-        "coderedcuriosity"
-        "coderedcuriosity"
-        "archhacks"
-        "archhacks"
-        "electriccityhacks"
-        "hackholyoke"
-        "hoyahacks"
-        "hackae"
-        "hackae"
-        "hacknjit"
-        "hacknjit"
-        "hackthehill"
-        "hackthehill"
-        "huskiehack2016"
-        "technica"
-        "hacktheu"
-        "hacktheu"
-        "hackpsu"
-        "hackpsu"
-        "hackrpi"
-        "hackrpi"
-        "mlhprimesouthwest"
-        "mlhprimesouthwest"
-        "mlhprime"
-        "mlhprime"
-        "mxhacksiv"
-        "mxhacksfour"
-        "mxhacksiv"
-        "mxhacksfour"
-        "mxhacksthefourth"
-        "mxhacksthefourth"
-        "mxhacks4"
-        "mxhacks4"
-        "tecmihacks"
-        "tecmihacks"
-        "wildhacks"
-        "wildhacks"
-        "localhackday"
-        "minnehack"
-        "minnehack"
-        "hackatown"
-        "hackatown"
-        "hackupc"
-        "hackupc"
-        "hackupc"
-        "hacksheffield"
-        "jacobshack"
-        "brumhack"
-        "brumhack"
-        "astonhack"
-        "astonhack"
-        "lauzhack"
-        "lauzhack"
-        "junction"
-        "hackkings"
-        "hackkings"
-        "hacknotts"
-        "hacknotts"
+        "hackmty": ,
+        "bigredhacks": ,
+        "hackthenorth": ,
+        "hackisu": ,
+        "lumohacks": ,
+        "ramhacks": ,
+        "hackgt": ,
+        "medhacks": ,
+        "hackcooper": ,
+        "hackdartmouththree": ,
+        "hackdartmouth3": ,
+        "hackdartmouththethird": ,
+        "hackdartmouthiii": ,
+        "sdhacks": ,
+        "volhacks": ,
+        "hackumbc": ,
+        "healthhacks": ,
+        "tamuhack": ,
+        "tamuhack": ,
+        "whack": ,
+        "hackumassiv": ,
+        "hackumassthefourth": ,
+        "hackumassfour": ,
+        "hackumass4": ,
+        "hackustate": ,
+        "hackustate": ,
+        "kenthackenough": ,
+        "mhacks8": ,
+        "hackny": ,
+        "revolutionuc": ,
+        "hackrice": ,
+        "hackwesternthree": ,
+        "hackwestern3": ,
+        "quackcon": ,
+        "quackcon": ,
+        "dubhacks": ,
+        "dubhacks": ,
+        "hackriddle": ,
+        "hackriddle": ,
+        "citrushack": ,
+        "fishhacks": ,
+        "fishhacks": ,
+        "hackgsu": ,
+        "hackgsu": ,
+        "hackharvard": ,
+        "ycphacks": ,
+        "ycphacks": ,
+        "hackru": ,
+        "hackru": ,
+        "hackru": ,
+        "hacktx": ,
+        "hacktx": ,
+        "miagamejam": ,
+        "miagamejam": ,
+        "miamigamejam": ,
+        "hacknc": ,
+        "hacknc": ,
+        "hacknc": ,
+        "coderedcuriosity": ,
+        "coderedcuriosity": ,
+        "archhacks": ,
+        "archhacks": ,
+        "electriccityhacks": ,
+        "hackholyoke": ,
+        "hoyahacks": ,
+        "hackae": ,
+        "hackae": ,
+        "hacknjit": ,
+        "hacknjit": ,
+        "hackthehill": ,
+        "hackthehill": ,
+        "huskiehack2016": ,
+        "technica": ,
+        "hacktheu": ,
+        "hacktheu": ,
+        "hackpsu": ,
+        "hackpsu": ,
+        "hackrpi": ,
+        "hackrpi": ,
+        "mlhprimesouthwest": ,
+        "mlhprimesouthwest": ,
+        "mlhprime": ,
+        "mlhprime": ,
+        "mxhacksiv": ,
+        "mxhacksfour": ,
+        "mxhacksiv": ,
+        "mxhacksfour": ,
+        "mxhacksthefourth": ,
+        "mxhacksthefourth": ,
+        "mxhacks4": ,
+        "mxhacks4": ,
+        "tecmihacks": ,
+        "tecmihacks": ,
+        "wildhacks": ,
+        "wildhacks": ,
+        "localhackday": ,
+        "minnehack": ,
+        "minnehack": ,
+        "hackatown": ,
+        "hackatown": ,
+        "hackupc": ,
+        "hackupc": ,
+        "hackupc": ,
+        "hacksheffield": ,
+        "jacobshack": ,
+        "brumhack": ,
+        "brumhack": ,
+        "astonhack": ,
+        "astonhack": ,
+        "lauzhack": ,
+        "lauzhack": ,
+        "junction": ,
+        "hackkings": ,
+        "hackkings": ,
+        "hacknotts": ,
+        "hacknotts": ,
     }
     /**
      * Array containing space facts.
