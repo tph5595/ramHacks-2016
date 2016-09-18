@@ -17,7 +17,7 @@ node {
         //echo pwd()
         dir ('/Users/taylor/ramHacks-2016/'){
           sh "python App/test.py"
-          //sh "zip -r App/SpaceGeek/src/master App/spaceGeek/src/*"
+          //sh "zip -r App/SpaceGeek/src/master App/spaceGeek/src/*.js"
           if(fileExists ('App/spaceGeek/*.zip')){
             sh "rm App/spaceGeek/src/*.zip"
           }

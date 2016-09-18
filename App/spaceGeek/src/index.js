@@ -189,7 +189,7 @@ Fact.prototype.intentHandlers = {
         var speechOutput = "Happy hacking";
         response.tell(speechOutput);
     },
-    "fucker": function(intent, session, response) {
+    "Fucker": function(intent, session, response) {
         response.ask("Fuck you too! What schedule would you like to look up?", "What schedule would you like?");
     },
     "AMAZON.CancelIntent": function(intent, session, response) {
