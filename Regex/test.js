@@ -11,7 +11,7 @@ http.get(url, function(res) {
 
     res.on('data', function(chunk) {
         body += chunk;
-        console.log("here");
+        console.log("here" + chunk);
     });
 
     res.on('end', function() {
