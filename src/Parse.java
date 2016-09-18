@@ -15,7 +15,7 @@ public class Parse {
 	public static final String ENDSEQUENCE = "this is the end sequence 123982349234\n\naiusdnfb";
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
+
 		StringBuilder inputBuilder = new StringBuilder();
 		StringBuilder endBuilder = new StringBuilder();
 		String regexMonthFinder = "(([Jj]anuary)|([Ff]ebuary)|([Mm]arch)|([Aa]pril)|([Mm]ay)|([Jj]une)|([Jj]uly)|([Aa]ugust)|([Ss]ept(ember)?)|([Oo]ctober)|([Nn]ovember)|([Dd]ecember)) [0-3][0-9]";
@@ -25,15 +25,14 @@ public class Parse {
 		String line = null;
 		boolean first = true;
 		boolean loop = true;
-		// String tempName = args[0];
-		String tempName = "https://www.bigredhacks.com/";
+		String tempName = args[0];
+		//String tempName = "https://www.bigredhacks.com/";
 
 		// opening the file stuff and putting into a string
 		if (0 <= args.length) {
 			// DON'T FORGET TO CHANGE THIS
 			// BACK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			inFile = new File(
-					"C:/Users/Eric/Desktop/Ramhacks/RamHacks Workspace/Hackathon Schedule Parser/src/BigRed.html");
+			inFile = new File(args[1]);
 			// inURL = new URL(args[0]);
 		} else {
 			System.err.println("Invalid arguments count:" + args.length);
