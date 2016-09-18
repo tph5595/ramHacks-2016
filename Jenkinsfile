@@ -14,7 +14,9 @@ node {
           sh "rm -rf [App/spaceGeek/src/*.zip"
           sh "zip -r App/spaceGeek/src/master App/spaceGeek/src/*"
           sh "javac src/*.java"
-          sh "./src/gen.sh"
+          dir('src/'){
+            sh "./src/gen.sh"
+          }
           dir('Docker/'){
             sh "docker build ."
           }
