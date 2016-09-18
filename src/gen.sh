@@ -6,9 +6,10 @@ docker rm $(docker ps -a -q)
 docker rmi $(docker images -q)
 docker build tph5595:v1 .
 rm index.h*
+rm *.txt
 rm *.class
 javac *.java
-java getIt
+java getIt The*.html
 for i in `cat urls.txt`
 do
 	wget $i
