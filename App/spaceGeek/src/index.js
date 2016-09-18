@@ -206,6 +206,21 @@ Fact.prototype.intentHandlers = {
     "fucker": function(intent, session, response) {
         response.ask("Fuck you too! What schedule would you like to look up?", "What schedule would you like?");
     },
+    "hackisu": function(intent, session, response) {
+        response.ask("at hack i s u there are 3 alienware, 1 alienware x 51 desktop, 3 amazon echo, 2 amazon fire phone, 7 arduinos, 5 base sheilds, 1 dell x p s 13, 228 grove kits components, 14 intel edisons, 6 leap motions, 1 muse headband, 1 nest thermostat kit, 6 oculas rift c v 1, 7 pebble, 1 pebble round, 6 pebble time, 4 samsung vr, 6 spark core", "What else would you like?");
+    },
+    "ramhacks": function(intent, session, response) {
+        response.ask("at ram hacks there are 2 alienware laptops, 2 amazon fire phones, 9 arduino kits, 8 base shields, 1 dell monitor, 2 dell xps 13, 90 grove kit components, 15 intel edisons, 3 leap motions, 1 oculas rift c v 1, 8 pebbles, 1 pebble round, 8 pebble time, 2 samsung gear v r, and 5 spark core", "What else would you like?");
+    },
+    "lumohacks": function(intent, session, response) {
+        response.ask("at lumo hacks there are 4 amazon echo, 1 amazon fire phone, 7 arduino, 6 base shields, 1 dell 19 inch monitor 1 dell inspiron gaming laptop, 1 dell monitor, 1 dell x p s 13 ubuntu, 2 dell x p s 13 windows, 94 grove kit components, 15 intel edisons, 5 leap motion, 1 nest thermostat kit, 3 oculas rift c v 1, 5 pebble, 1 pebble round, 5 pebble time, 4 samsung gear v r, 6 spark core", "What else would you like?");
+    },
+    "bigredhacks": function(intent, session, response) {
+        response.ask("3 alienware, 7 amazon echo, 2 amazon fire phone, 10 arduino, 7 base sheild, 1 dell inspiron gaming laptop, 3 dell monitor, 1 dell x p s 13 ubuntu, 2 dell x p s 13 windows, 92 grove kit components, 13 intel edisons, 6 leap motion, 1 nest thermostat kit with built in wifi, 6 oculas rift c v 1, 7 pebble, 1 pebble round, 6 pebble time, 4 samsung gear v r, 6 spark core, 12 surface pro 4", "What else would you like?");
+    },
+    "hackthenorth": function(intent, session, response) {
+        response.ask("2 adafruit 16 x 2 lcd plus keypad kit rpi, 1 amazon echo, 2 amazon fire phone, 6 arduino, 9 arduino leonardo, 6 base shields, 52 components, 1 dell inspiron gaming laptop, 1 dell tablet, 1 dell x p s 13 windows, 5 digital potentiometer 10k, 4 dodocase google cardboard, 1 fingerprint sensor, 1 fitbit charge hr, 3 flexiforce pressure sensor 25 pounds, 2 flexiforce pressure sensor 25 pounds i inch area, 3 force sensitive resitors half an inch, force sensitive resitor small, 3 force sensitive resitor spuare, 3 humidity and tempature sensor, 17 intel edisons, 1 myo alpha developer kit, 1 myo armband, 1 nest camera, 1 oculas rift c v 1, 1 parrot a r drone 2 point 0, 1 particle photon internet button, 6 pebble, 1 pebble round, and much much more", "What else would you like?");
+    },
     "AMAZON.CancelIntent": function(intent, session, response) {
         var speechOutput = "Happy hacking";
         response.tell(speechOutput);
