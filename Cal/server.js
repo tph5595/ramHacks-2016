@@ -1,11 +1,11 @@
 var express = require('express');
 var app = express();
-const spawn = require('child_process').spawn;
+var fs = require('fs');
 app.get('/', function(req, res) {
     res.send('Hello World!');
 });
 app.get('/p', function(req, res) {
-    const ls = spawn('python', ['gen.py', 'req.query.name', 'req.query.dt']);
+    fs.writeFile("data", (req.query.name + "\t" + req.query.dt), function(err) {});
     res.send(req.query.name + "\t" + req.query.dt);
 });
 app.listen(8080, function() {
