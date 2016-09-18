@@ -93,8 +93,9 @@ Fact.prototype.intentHandlers = {
     },
 
     "HackathonName": function(intent, session, response) {
+
         var stringResult;
-        var url = "http://127.0.0.1:8090/";
+        var url = "http://127.0.0.1:8090/" + name + ".txt";
         http.get(url, function(res) {
             var body = '';
 
