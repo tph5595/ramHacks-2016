@@ -35,3 +35,11 @@ GetNextEventIntent yes please
 GetNextEventIntent why not
 GetNextEventIntent mm
 GetNextEventIntent i guess so
+
+GetCalendarIntent what do i have going on
+GetCalendarIntent whats on my schedule
+GetCalendarIntent whats on my hackathon schedule
+
+sendCalendarIntent push my data to my phone please
+sendCalendarIntent can you send that to my phone
+sendCalendarIntent send it to my phone
