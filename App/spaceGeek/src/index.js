@@ -175,6 +175,7 @@ Fact.prototype.intentHandlers = {
             response.ask("could not find a hackathon named " + (url) + ". Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
         });
     },
+    //for all that is holy
     "GetNextEventIntent": function(intent, session, response) {
         response.ask("What schedule would you like to look up?", "What schedule would you like?");
     },
