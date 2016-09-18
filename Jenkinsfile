@@ -20,7 +20,7 @@ node {
          echo 'Successful compile'
          sh "java App/main.class"
          echo 'Successful run'*/
-    //  }else{
+         }//else{
         /* bat "javac App/*.java"
          echo 'Successful compile'
          bat "java App/main.class"
