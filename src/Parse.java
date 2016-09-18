@@ -30,7 +30,7 @@ public class Parse {
 
 		// opening the file stuff and putting into a string
 		if (0 <= args.length) {
-			inFile = new File("C:/Users/Eric/Desktop/Ramhacks/RamHacks Workspace/Hackathon Schedule Parser/src/BigRed.html");
+			inFile = new File(args[1]);
 			//inURL = new URL(args[0]);
 		} else {
 			System.err.println("Invalid arguments count:" + args.length);
