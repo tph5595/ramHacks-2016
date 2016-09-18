@@ -102,6 +102,7 @@ public class Parse {
 				}
 			}
 		}
+		System.out.println(endBuilder.toString());
 	}
 
 	private static boolean isLetter(char ch) {
