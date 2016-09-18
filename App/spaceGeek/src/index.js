@@ -109,6 +109,20 @@ var NAME_TO_FILE = {
     "hacknotts": "hacknotts"
 };
 
+var months = {
+    "january": "01",
+    "february": "02",
+    "march": "03",
+    "april": "04",
+    "may": "05",
+    "june": "06",
+    "july": "07",
+    "august": "08",
+    "september": "09",
+    "october": "10",
+    "november": "11",
+    "december": "12"
+};
 /**
  * The AlexaSkill prototype and helper functions
  */
@@ -197,8 +211,45 @@ Fact.prototype.intentHandlers = {
         response.tell(speechOutput);
     },
     "GetCalendarIntent": function(intent, session, response) {
-        var speechOutput = "Your calendar includes ";
-        response.tell(speechOutput);
+        var lookupCategory = (intent.slots.hackName.value).toLowerCase();
+        lookupCategory = lookupCategory.replace(/\s/g, '');
+        var stringResult;
+        var url = "http://45.55.81.231:8090/" + lookupCategory.toString();
+        //  response.tell("working");
+        http.get(url, function(res) {
+            //response.tell("fuck off");
+            var body = '';
+
+            res.on('data', function(chunk) {
+                body += chunk;
+            });
+
+            res.on('end', function() {
+                stringResult = parseJson(body);
+                response.ask(lookupCategory + " was added to your calendar. Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
+            });
+        }).on('error', function(e) {
+            console.log("Got error: ", e);
+            response.ask("unable to add " + lookupCategory + " to your calendar", "Would you like to look up another hackathon?");
+        });
+        //TODO need to parse more here
+        url = "http://45.55.81.231:8080/p?name=" + lookupCategory.toString();
+        http.get(url, function(res) {
+            //response.tell("fuck off");
+            var body = '';
+
+            res.on('data', function(chunk) {
+                body += chunk;
+            });
+
+            res.on('end', function() {
+                stringResult = parseJson(body);
+                response.ask(lookupCategory + " was added to your calendar. Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
+            });
+        }).on('error', function(e) {
+            console.log("Got error: ", e);
+            response.ask("unable to add " + lookupCategory + " to your calendar", "Would you like to look up another hackathon?");
+        });
     },
     "sendCalendarIntent": function(intent, session, response) {
         var speechOutput = "Your new calendar data is synced with your phone";
@@ -252,40 +303,3 @@ exports.handler = function(event, context) {
     var fact = new Fact();
     fact.execute(event, context);
 };
-
-var event = {
-  'summary': 'Opening Ceremony',
-  'location': '431 East Main St., Richmond, VA 22222',
-  'description': 'The beginning of the RamHacks event.',
-  'start': {
-    'dateTime': '2016-09-18T09:00:00-01:30',
-    'timeZone': 'America/New_York'
-  },
-  'end': {
-    'dateTime': '2015-05-28T17:00:00-02:00',
-    'timeZone': 'America/New_York'
-  },
-  'recurrence': [
-    'RRULE:FREQ=YEARLY;COUNT=2'
-  ],
-  'attendees': [
-    {'email': 'coltsfan444@gmail.com'},
-    //{'email': 'sbrin@example.com'}
-  ],
-  'reminders': {
-    'useDefault': false,
-    'overrides': [
-      {'method': 'email', 'minutes': 24 * 60},
-      {'method': 'popup', 'minutes': 10}
-    ]
-  }
-};
-
-var request = gapi.client.calendar.events.insert({
-  'calendarId': 'primary',
-  'resource': event
-});
-
-request.execute(function(event) {
-  appendPre('Event created: ' + event.htmlLink);
-});

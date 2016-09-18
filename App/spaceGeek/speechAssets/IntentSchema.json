@@ -37,7 +37,13 @@
             "intent": "fucker"
         },
         {
-            "intent": "GetCalendarIntent"
+            "intent": "GetCalendarIntent",
+            "slots": [
+              {
+                "name": "hackName",
+                "type": "HACKATHON_NAMES"
+              }
+            ]
         },
         {
             "intent": "sendCalendarIntent"
