@@ -6,6 +6,7 @@
  * 3.	write to hackathon name the parsed schedule
  */
 import java.io.*;
+import java.util.regex.*;
 
 public class Parse {
 
@@ -15,6 +16,8 @@ public class Parse {
 		// TODO Auto-generated method stub
 		StringBuilder inputBuilder = new StringBuilder();
 		StringBuilder endBuilder = new StringBuilder();
+		String regexMonthFinder = "(([Jj]anuary)|([Ff]ebuary)|([Mm]arch)|([Aa]pril)|([Mm]ay)|([Jj]une)|([Jj]uly)|([Aa]ugust)|([Ss]ept(ember)?)|([Oo]ctober)|([Nn]ovember)|([Dd]ecember)) [0-3][0-9]";
+		Pattern p = Pattern.compile(regexMonthFinder);
 		File inFile = null;
 		String line = null;
 
@@ -42,46 +45,80 @@ public class Parse {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		Matcher m = p.matcher(input);
+		if (m.find()) {
+			if (m.group().substring(0, 4).toLowerCase().equals("sept"))
+				endBuilder.append("This hackathon starts on September" + m.group().substring(4, m.group().length()));
+			else
+				endBuilder.append("This hackathon starts on " + m.group());
+		}
 
 		// real fun begins
 		int inputIndex = 0;
 		String[] daysArrays = { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday" };
 		int dayIndex = -1;
-		//while end sequence not triggerd
-		while (notEndSquence(inputIndex)) {
-			//checking for the day
+
+		// while end sequence not triggerd
+		while (notEndSequence(inputIndex)) {
+			// checking for the day
 			dayIndex = stringEquals(inputIndex, daysArrays);
 			while (-1 == dayIndex) {
 				inputIndex++;
 			}
-			//adding to what Alexa will say string
+			// adding to what Alexa will say string
 			endBuilder.append("On " + daysArrays[dayIndex] + " ");
-			//looking for what time on that day
-			while (input.charAt(inputIndex + 2) != ':') {
+			inputIndex++;
+			while (notEndSequence(inputIndex)) {
+				// looking for what time on that day
+				while (input.charAt(inputIndex + 2) != ':') {
+					// if the day changes
+					dayIndex = stringEquals(inputIndex, daysArrays);
+					if (dayIndex != -1)
+						endBuilder.append(" On " + daysArrays[dayIndex] + " ");
+					inputIndex++;
+				}
+				// if time is two digits (10+)
+				if (input.charAt(inputIndex) != 1) {
+					inputIndex++;
+				}
+				// add dat time
+				endBuilder.append("At ");
+				while (input.charAt(inputIndex) != ' ') {
+					endBuilder.append(input.charAt(inputIndex));
+					inputIndex++;
+				}
+				while (input.substring(inputIndex, inputIndex + 1).toLowerCase() != "a"
+						&& input.substring(inputIndex, inputIndex + 1).toLowerCase() != "p") {
+					inputIndex++;
+				}
+				endBuilder.append(" " + input.charAt(inputIndex) + "m, ");
 				inputIndex++;
+				// while not ">(letter)"
+				while (input.charAt(inputIndex - 1) != '>' || !isLetter(input.charAt(inputIndex))) {
+					inputIndex++;
+				}
+				while (input.charAt(inputIndex) != '<') {
+					endBuilder.append(input.charAt(inputIndex));
+				}
 			}
-			if (input.charAt(inputIndex) != 1) {
-				inputIndex++;
-			}
-			while(input.charAt(inputIndex) != ' ')
-			{
-				endBuilder.append(input.charAt(inputIndex));
-			}
-			
-			
 		}
+	}
+
+	private static boolean isLetter(char ch) {
+		// TODO Auto-generated method stub
+		return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'));
 	}
 
 	// returns index of matching string, -1 if none matched
 	private static int stringEquals(int startIndex, String[] strArray) {
 		for (int k = 0; k < strArray.length; k++) {
-			if (input.substring(startIndex, startIndex+strArray[k].length()).toLowerCase().equals(strArray[k]))
+			if (input.substring(startIndex, startIndex + strArray[k].length()).toLowerCase().equals(strArray[k]))
 				return k;
 		}
 		return -1;
 	}
 
-	private static boolean notEndSquence(int i) {
+	private static boolean notEndSequence(int i) {
 		return !(input.substring(i, i + 13) == "End Sequence!");
 	}
 
