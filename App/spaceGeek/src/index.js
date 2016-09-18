@@ -172,7 +172,7 @@ Fact.prototype.intentHandlers = {
             });
         }).on('error', function(e) {
             console.log("Got error: ", e);
-            response.ask("could not find a hackathon named " + (intent.slots.Category) + ". Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
+            response.ask("could not find a hackathon named " + (intent.slots.hackName) + ". Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
         });
     },
     "GetNextEventIntent": function(intent, session, response) {
