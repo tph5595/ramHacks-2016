@@ -104,7 +104,7 @@ Fact.prototype.intentHandlers = {
         }).on('error', function(e) {
             console.log("Got error: ", e);
         });
-        response.tell("working");
+        response.tell(stringResult);
     },
 
     "AMAZON.HelpIntent": function(intent, session, response) {
