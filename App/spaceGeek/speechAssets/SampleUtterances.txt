@@ -18,3 +18,20 @@ HackathonName whats going on at {hackName}
 HackathonName well {hackName} seems pretty awesome
 HackathonName tell me about {hackName}
 HackathonName what does the schedule look like for {hackName}
+
+AMAZON.StopIntent no
+AMAZON.StopIntent nope
+AMAZON.StopIntent no thanks
+AMAZON.StopIntent no thank you
+AMAZON.StopIntent thats fine
+AMAZON.StopIntent nah
+AMAZON.StopIntent fuck off mat
+
+GetNextEventIntent yes
+GetNextEventIntent yup
+GetNextEventIntent sure
+GetNextEventIntent yes please
+GetNextEventIntent why not
+GetNextEventIntent fuck you
+GetNextEventIntent mm
+GetNextEventIntent i guess so
