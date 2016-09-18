@@ -22,8 +22,8 @@ node {
           }
           dir('Cal/'){
             sh "npm install express"
-            sh "node server.js"
-            sh "python "
+            //sh "node server.js"
+            //sh "python "
           }
       }else{
          echo 'Please run on Unix for full test cases'
