@@ -18,8 +18,8 @@ HackathonName whats going on at {hackName}
 HackathonName well {hackName} seems pretty awesome
 HackathonName tell me about {hackName}
 HackathonName what does the schedule look like for {hackName}
-Fucker fuck you
-Fucker fuck off
+fucker fuck you
+fucker fuck off
 DontHearNoMore no
 DontHearNoMore nope
 DontHearNoMore no thanks
