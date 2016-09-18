@@ -248,7 +248,7 @@ Fact.prototype.intentHandlers = {
             });
         }).on('error', function(e) {
             console.log("Got error: ", e);
-            response.ask("unable to add " + lookupCategory + " to your calendar", "Would you like to look up another hackathon?");
+            response.ask("poopy pants unable to add " + lookupCategory + " to your calendar", "Would you like to look up another hackathon?");
         });
     },
     "sendCalendarIntent": function(intent, session, response) {
