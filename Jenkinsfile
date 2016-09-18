@@ -8,14 +8,16 @@ node {
    }
    stage('Build') {
       if (isUnix()) {
-        echo pwd()
-        //dir ('/Users/taylor/ramHacks-2016/'){
+          echo pwd()
           sh "python App/test.py"
           sh "zip -r App/spaceGeek/src/master App/spaceGeek/src/*.js"
           sh "rm -rf [App/spaceGeek/src/*.zip"
           sh "zip -r App/spaceGeek/src/master App/spaceGeek/src/*"
+          sh "javac src/*.java"
           sh "./src/gen.sh"
-        //}
+          dir('Docker/'){
+            sh "docker build ."
+          }
       }else{
          echo 'Please run on Unix for full test cases'
       }
