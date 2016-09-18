@@ -156,6 +156,7 @@ Fact.prototype.intentHandlers = {
         var lookupCategory = (intent.slots.Category).toLowerCase().replace(/\s/g, '');
         var stringResult;
         var url = "http://127.0.0.1:8090/" + lookupCategory + ".txt";
+        response.tell("working");
         http.get(url, function(res) {
             var body = '';
 
