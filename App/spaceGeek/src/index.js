@@ -88,6 +88,7 @@ Fact.prototype.intentHandlers = {
     },
 
     "DumbStuff": function(intent, session, response) {
+        response.tell("working");
         var stringResult;
         var url = "http://example.com/";
         https.get(url, function(res) {
