@@ -170,7 +170,7 @@ Fact.prototype.intentHandlers = {
         var lookupCategory = (intent.slots.hackName.value).toLowerCase();
         lookupCategory = lookupCategory.replace(/\s/g, '');
         var stringResult;
-        var url = "http://45.55.81.231:8090/" + lookupCategory.toString();
+        var url = "http://45.55.81.231:8090/" + lookupCategory.toString() + ".txt";
         //  response.tell("working");
         http.get(url, function(res) {
             //response.tell("fuck off");
@@ -200,7 +200,7 @@ Fact.prototype.intentHandlers = {
         response.tell(speechOutput);
     },
     "AMAZON.StopIntent": function(intent, session, response) {
-        var speechOutput = "Happy hacking";
+        var speechOutput = "Happy hacking biiiiitch";
         response.tell(speechOutput);
     },
     "fucker": function(intent, session, response) {
