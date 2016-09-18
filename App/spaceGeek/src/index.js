@@ -91,7 +91,7 @@ Fact.prototype.intentHandlers = {
         handleNewFactRequest(response);
     },
 
-    "DumbStuff": function(intent, session, response) {
+    "HackathonName": function(intent, session, response) {
         var stringResult;
         var url = "https://ramhacks.vcu.edu/";
         https.get(url, function(res) {
@@ -103,7 +103,6 @@ Fact.prototype.intentHandlers = {
 
             res.on('end', function() {
                 stringResult = parseJson(body);
-                //eventCallback(stringResult);
             });
         }).on('error', function(e) {
             console.log("Got error: ", e);
