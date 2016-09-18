@@ -153,7 +153,7 @@ Fact.prototype.intentHandlers = {
     },
 
     "HackathonName": function(intent, session, response) {
-        var lookupCategory = (intent.slots.hackName).toLowerCase();
+        var lookupCategory = (intent.slots.hackName.value).toLowerCase();
         response.tell("working");
         lookupCategory = lookupCategory.replace(/\s/g, '');
 
