@@ -98,7 +98,7 @@ Fact.prototype.intentHandlers = {
             });
 
             res.on('end', function() {
-                var stringResult = parseJson(body);
+                stringResult = parseJson(body);
                 //eventCallback(stringResult);
             });
         }).on('error', function(e) {
