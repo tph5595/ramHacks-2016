@@ -7,4 +7,4 @@ RUN cd ramHacks-2016/Regex/
 RUN python -m SimpleHTTPServer 8090 &
 RUN apt-get install -y nodejs npm
 RUN ln -s /usr/bin/nodejs /usr/bin/node
-RUN node server.js
+RUN node server.js &
