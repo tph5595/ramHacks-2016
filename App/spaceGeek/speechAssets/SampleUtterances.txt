@@ -11,6 +11,10 @@ GetNewFactIntent give me a space trivia
 GetNewFactIntent give me some information
 GetNewFactIntent give me some space information
 GetNewFactIntent tell me something
-AMAZON.HelpIntent give me something
-DumbStuff ram hacks
+
 HackathonName {HACKATHON_NAMES}
+HackathonName how about {HACKATHON_NAMES}
+HackathonName whats going on at {HACKATHON_NAMES}
+HackathonName well {HACKATHON_NAMES} seems pretty awesome
+HackathonName tell me about {HACKATHON_NAMES}
+HackathonName what does the schedule look like for {HACKATHON_NAMES}
