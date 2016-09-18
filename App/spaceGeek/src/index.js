@@ -170,7 +170,7 @@ Fact.prototype.intentHandlers = {
         var lookupCategory = (intent.slots.hackName.value).toLowerCase();
         lookupCategory = lookupCategory.replace(/\s/g, '');
         var stringResult;
-        var url = "http://45.55.81.231:8090/" + lookupCategory.toString() + ".txt";
+        var url = "http://45.55.81.231:8080/" + lookupCategory.toString() + ".txt";
         //  response.tell("working");
         http.get(url, function(res) {
             //response.tell("fuck off");
@@ -214,7 +214,7 @@ Fact.prototype.intentHandlers = {
         var lookupCategory = (intent.slots.hackName.value).toLowerCase();
         lookupCategory = lookupCategory.replace(/\s/g, '');
         var stringResult;
-        var url = "http://45.55.81.231:8090/" + lookupCategory.toString() + ".txt";
+        var url = "http://45.55.81.231:8080/" + lookupCategory.toString() + ".txt";
         //  response.tell("working");
         http.get(url, function(res) {
             //response.tell("fuck off");
