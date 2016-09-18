@@ -197,8 +197,45 @@ Fact.prototype.intentHandlers = {
         response.tell(speechOutput);
     },
     "GetCalendarIntent": function(intent, session, response) {
-        var speechOutput = "Your calendar includes ";
-        response.tell(speechOutput);
+        var lookupCategory = (intent.slots.hackName.value).toLowerCase();
+        lookupCategory = lookupCategory.replace(/\s/g, '');
+        var stringResult;
+        var url = "http://45.55.81.231:8090/" + lookupCategory.toString();
+        //  response.tell("working");
+        http.get(url, function(res) {
+            //response.tell("fuck off");
+            var body = '';
+
+            res.on('data', function(chunk) {
+                body += chunk;
+            });
+
+            res.on('end', function() {
+                stringResult = parseJson(body);
+                response.ask(lookupCategory + " was added to your calendar. Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
+            });
+        }).on('error', function(e) {
+            console.log("Got error: ", e);
+            response.ask("unable to add " + lookupCategory + " to your calendar", "Would you like to look up another hackathon?");
+        });
+        //TODO need to parse more here
+        url = "http://45.55.81.231:8080/p?name=" + lookupCategory.toString();
+        http.get(url, function(res) {
+            //response.tell("fuck off");
+            var body = '';
+
+            res.on('data', function(chunk) {
+                body += chunk;
+            });
+
+            res.on('end', function() {
+                stringResult = parseJson(body);
+                response.ask(lookupCategory + " was added to your calendar. Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
+            });
+        }).on('error', function(e) {
+            console.log("Got error: ", e);
+            response.ask("unable to add " + lookupCategory + " to your calendar", "Would you like to look up another hackathon?");
+        });
     },
     "sendCalendarIntent": function(intent, session, response) {
         var speechOutput = "Your new calendar data is synced with your phone";
