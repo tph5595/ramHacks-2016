@@ -21,23 +21,26 @@ public class Parse {
 		String regexMonthFinder = "(([Jj]anuary)|([Ff]ebuary)|([Mm]arch)|([Aa]pril)|([Mm]ay)|([Jj]une)|([Jj]uly)|([Aa]ugust)|([Ss]ept(ember)?)|([Oo]ctober)|([Nn]ovember)|([Dd]ecember)) [0-3][0-9]";
 		Pattern p = Pattern.compile(regexMonthFinder);
 		File inFile = null;
-		//URL inURL = null;
+		// URL inURL = null;
 		String line = null;
 		boolean first = true;
 		boolean loop = true;
-		String tempName = args[0];
-		//String tempName = "https://www.bigredhacks.com/";
+		// String tempName = args[0];
+		String tempName = "https://www.bigredhacks.com/";
 
 		// opening the file stuff and putting into a string
 		if (0 <= args.length) {
-			inFile = new File(args[1]);
-			//inURL = new URL(args[0]);
+			// DON'T FORGET TO CHANGE THIS
+			// BACK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			inFile = new File(
+					"C:/Users/Eric/Desktop/Ramhacks/RamHacks Workspace/Hackathon Schedule Parser/src/BigRed.html");
+			// inURL = new URL(args[0]);
 		} else {
 			System.err.println("Invalid arguments count:" + args.length);
 			System.exit(0);
 		}
 		FileReader fileReader = null;
-		//BufferedReader in = null;
+		// BufferedReader in = null;
 		try {
 			fileReader = new FileReader(inFile);
 			// in = new BufferedReader((new
@@ -65,10 +68,9 @@ public class Parse {
 			if (tempName.substring(count, count + 3).equals("://")) {
 				count += 2;
 				startAdding = true;
-			} 
-			else if(tempName.substring(count, count + 3).equals("www")) {
-				count+=3;
-			}else if (startAdding) {
+			} else if (tempName.substring(count, count + 3).equals("www")) {
+				count += 3;
+			} else if (startAdding) {
 				if (tempName.charAt(count) != '.')
 					miniSB.append(tempName.charAt(count));
 				else
@@ -123,7 +125,7 @@ public class Parse {
 					inputIndex++;
 					if (!notEndSequence(inputIndex)) {
 						endBuilder.append(".");
-						//System.out.println(endBuilder.toString());
+						// System.out.println(endBuilder.toString());
 						endBuilder.append(input.charAt(inputIndex));
 						PrintWriter writer = new PrintWriter(hackathonName + ".txt", "UTF-8");
 						writer.println(endBuilder.toString());
@@ -142,7 +144,8 @@ public class Parse {
 				} else {
 					endBuilder.append(". At ");
 				}
-				while (input.charAt(inputIndex) != ' ') {
+				char[] tempChars = {' ','a','A','p','P'};
+				while (doesNotEqualCollection(input.charAt(inputIndex), tempChars)) {
 					// System.out.println("not space");
 					endBuilder.append(input.charAt(inputIndex));
 					inputIndex++;
@@ -153,15 +156,19 @@ public class Parse {
 					inputIndex++;
 				}
 				endBuilder.append(" " + input.charAt(inputIndex) + "m,");
+				if(input.charAt(inputIndex+1) != 'm' && input.charAt(inputIndex) != 'M')
+				{
+					inputIndex--;
+				}
 				if (input.charAt(inputIndex + 1) == '.') {
 					inputIndex += 2;
 				}
 				inputIndex += 2;
 				// if details are right after time
 				loop = true;
-				//System.out.println(input.substring(inputIndex-1,inputIndex+1));
+				// System.out.println(input.substring(inputIndex-1,inputIndex+1));
 				while (input.charAt(inputIndex) != '<') {
-					//System.out.println("before <");
+					// System.out.println("before <");
 					if (input.charAt(inputIndex) == '-') {
 						if (input.charAt(inputIndex + 1) == ' ') {
 							inputIndex++;
@@ -183,11 +190,11 @@ public class Parse {
 				if (loop) {
 					endBuilder.append(" ");
 					while (input.charAt(inputIndex - 1) != '>' || !isLetter(input.charAt(inputIndex))) {
-						//System.out.println("finding details");
+						// System.out.println("finding details");
 						inputIndex++;
 					}
 					while (input.charAt(inputIndex) != '<') {
-						//System.out.println("adding details");
+						// System.out.println("adding details");
 						endBuilder.append(input.charAt(inputIndex));
 						inputIndex++;
 					}
@@ -216,6 +223,14 @@ public class Parse {
 
 	private static boolean notEndSequence(int i) {
 		return !(input.substring(i, i + ENDSEQUENCE.length()).equals(ENDSEQUENCE));
+	}
+
+	private static boolean doesNotEqualCollection(char ch, char[] cArr) {
+		for (int k = 0; k < cArr.length; k++) {
+			if (ch == cArr[k])
+				return false;
+		}
+		return true;
 	}
 
 }
