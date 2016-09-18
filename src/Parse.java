@@ -96,6 +96,12 @@ public class Parse {
 				inputIndex++;
 				dayIndex = stringEquals(inputIndex, daysArrays);
 				//System.out.println("while -1 == dayIndex");
+				
+				//no schedule fix
+				if (!notEndSequence(inputIndex)) {
+					endBuilder.append("No Schedule found for " + hackathonName);
+					System.exit(0);
+				}
 			}
 			// adding to what Alexa will say string
 			endBuilder.append(". On " + daysArrays[dayIndex] + " ");
