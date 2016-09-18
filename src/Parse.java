@@ -1,3 +1,4 @@
+
 /*
  * This program will:
  * 1.	Take URL as input to parse it for the hackathon name
@@ -20,15 +21,17 @@ public class Parse {
 		String regexMonthFinder = "(([Jj]anuary)|([Ff]ebuary)|([Mm]arch)|([Aa]pril)|([Mm]ay)|([Jj]une)|([Jj]uly)|([Aa]ugust)|([Ss]ept(ember)?)|([Oo]ctober)|([Nn]ovember)|([Dd]ecember)) [0-3][0-9]";
 		Pattern p = Pattern.compile(regexMonthFinder);
 		File inFile = null;
-		URL inURL = null;
+		//URL inURL = null;
 		String line = null;
 		boolean first = true;
 		boolean loop = true;
+		String tempName = args[0];
+		//String tempName = "https://www.bigredhacks.com/";
 
 		// opening the file stuff and putting into a string
-		if (0 < args.length) {
-			inFile = new File(args[1]);
-			inURL = new URL(args[0]);
+		if (0 <= args.length) {
+			inFile = new File("C:/Users/Eric/Desktop/Ramhacks/RamHacks Workspace/Hackathon Schedule Parser/src/BigRed.html");
+			//inURL = new URL(args[0]);
 		} else {
 			System.err.println("Invalid arguments count:" + args.length);
 			System.exit(0);
@@ -37,14 +40,15 @@ public class Parse {
 		//BufferedReader in = null;
 		try {
 			fileReader = new FileReader(inFile);
-			//in = new BufferedReader((new InputStreamReader(inURL.openStream())));
+			// in = new BufferedReader((new
+			// InputStreamReader(inURL.openStream())));
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		try {
 			while ((line = bufferedReader.readLine()) != null) {
-				//System.out.println("making sb");
+				// System.out.println("making sb");
 				inputBuilder.append(line);
 			}
 			bufferedReader.close();
@@ -57,16 +61,16 @@ public class Parse {
 		StringBuilder miniSB = new StringBuilder();
 		int count = 0;
 		boolean startAdding = false;
-		while(count < args[0].length())
-		{
-			if(args[0].substring(count, count+3).equals("://"))
-			{
-				count+=2;
+		while (count < tempName.length()) {
+			if (tempName.substring(count, count + 3).equals("://")) {
+				count += 2;
 				startAdding = true;
-			}
-			else if (startAdding){
-				if(args[0].charAt(count) != '.')
-					miniSB.append(args[0].charAt(count));
+			} 
+			else if(tempName.substring(count, count + 3).equals("www")) {
+				count+=3;
+			}else if (startAdding) {
+				if (tempName.charAt(count) != '.')
+					miniSB.append(tempName.charAt(count));
 				else
 					break;
 			}
@@ -78,7 +82,7 @@ public class Parse {
 				endBuilder.append(hackathonName + " starts on September" + m.group().substring(4, m.group().length()));
 			else
 				endBuilder.append(hackathonName + " starts on " + m.group());
-			
+
 		} else
 			endBuilder.append("A start date mysteriously couldn't be found for this Hackathon");
 
@@ -90,14 +94,14 @@ public class Parse {
 		// while end sequence not triggerd
 		while (notEndSequence(inputIndex)) {
 			// checking for the day
-			//System.out.println("start the first while");
+			// System.out.println("start the first while");
 			dayIndex = stringEquals(inputIndex, daysArrays);
 			while (-1 == dayIndex) {
 				inputIndex++;
 				dayIndex = stringEquals(inputIndex, daysArrays);
-				//System.out.println("while -1 == dayIndex");
-				
-				//no schedule fix
+				// System.out.println("while -1 == dayIndex");
+
+				// no schedule fix
 				if (!notEndSequence(inputIndex)) {
 					endBuilder.append("No Schedule found for " + hackathonName);
 					System.exit(0);
@@ -110,7 +114,7 @@ public class Parse {
 				// looking for what time on that day
 				while (input.charAt(inputIndex + 2) != ':' || !isNumber(input.charAt(inputIndex + 1))) {
 					// if the day changes
-					//System.out.println("deep while");
+					// System.out.println("deep while");
 					dayIndex = stringEquals(inputIndex, daysArrays);
 					if (dayIndex != -1) {
 						endBuilder.append(". On " + daysArrays[dayIndex] + " ");
@@ -122,8 +126,8 @@ public class Parse {
 						//System.out.println(endBuilder.toString());
 						endBuilder.append(input.charAt(inputIndex));
 						PrintWriter writer = new PrintWriter(hackathonName + ".txt", "UTF-8");
-				        writer.println(endBuilder.toString());
-				        writer.close();
+						writer.println(endBuilder.toString());
+						writer.close();
 						System.exit(0);
 					}
 				}
@@ -139,13 +143,13 @@ public class Parse {
 					endBuilder.append(". At ");
 				}
 				while (input.charAt(inputIndex) != ' ') {
-					//System.out.println("not space");
+					// System.out.println("not space");
 					endBuilder.append(input.charAt(inputIndex));
 					inputIndex++;
 				}
 				while (!input.substring(inputIndex, inputIndex + 1).toLowerCase().equals("a")
 						&& !input.substring(inputIndex, inputIndex + 1).toLowerCase().equals("p")) {
-					//System.out.println("a or p");
+					// System.out.println("a or p");
 					inputIndex++;
 				}
 				endBuilder.append(" " + input.charAt(inputIndex) + "m,");
@@ -153,28 +157,29 @@ public class Parse {
 					inputIndex += 2;
 				}
 				inputIndex += 2;
-				// while not ">(letter)"
-				if (loop) {
-					while (input.charAt(inputIndex) != '<') {
-						//System.out.println("before <");
-						if (input.charAt(inputIndex) == '-') {
-							if (input.charAt(inputIndex + 1) == ' ') {
-								inputIndex++;
-							}
-						} else {
-							if (isNumber(input.charAt(inputIndex))) {
-								while (input.charAt(inputIndex) != 'm' && input.charAt(inputIndex) != 'M')
-									inputIndex++;
-								break;
-							}
-							endBuilder.append(input.charAt(inputIndex));
-							if (input.charAt(inputIndex) != ' ') {
-								loop = false;
-							}
+				// if details are right after time
+				loop = true;
+				//System.out.println(input.substring(inputIndex-1,inputIndex+1));
+				while (input.charAt(inputIndex) != '<') {
+					//System.out.println("before <");
+					if (input.charAt(inputIndex) == '-') {
+						if (input.charAt(inputIndex + 1) == ' ') {
+							inputIndex++;
 						}
-						inputIndex++;
+					} else {
+						if (isNumber(input.charAt(inputIndex))) {
+							while (input.charAt(inputIndex) != 'm' && input.charAt(inputIndex) != 'M')
+								inputIndex++;
+							break;
+						}
+						endBuilder.append(input.charAt(inputIndex));
+						if (input.charAt(inputIndex) != ' ') {
+							loop = false;
+						}
 					}
+					inputIndex++;
 				}
+				// while not ">(letter)"
 				if (loop) {
 					endBuilder.append(" ");
 					while (input.charAt(inputIndex - 1) != '>' || !isLetter(input.charAt(inputIndex))) {
@@ -183,13 +188,13 @@ public class Parse {
 					}
 					while (input.charAt(inputIndex) != '<') {
 						//System.out.println("adding details");
+						endBuilder.append(input.charAt(inputIndex));
 						inputIndex++;
 					}
 				}
-				loop = true;
 			}
 		}
-		//System.out.println(endBuilder.toString());
+		// System.out.println(endBuilder.toString());
 	}
 
 	private static boolean isNumber(char ch) {
