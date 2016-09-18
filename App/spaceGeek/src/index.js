@@ -175,6 +175,7 @@ Fact.prototype.intentHandlers = {
     },
 
     "HackathonName": function(intent, session, response) {
+
         var lookupCategory = (intent.slots.Category).toLowerCase().replace(/\s/g, '');;
         var stringResult;
         var url = "http://127.0.0.1:8090/" + lookupCategory + ".txt";
