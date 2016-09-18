@@ -17,8 +17,8 @@ node {
           dir('src/'){
           //  sh "./gen.sh"
           }
-          sh "docker rm $(docker ps -a -q)"
-          sh "docker rmi $(docker images -q)"
+          sh "docker rm ${docker ps -a -q}"
+          sh "docker rmi ${docker images -q}"
           dir('Docker/'){
             sh "docker build ."
           }
