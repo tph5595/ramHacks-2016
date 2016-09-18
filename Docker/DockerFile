@@ -1,4 +1,4 @@
-#RamHacks-2016 Amazom echo schedualer
+#RamHacks-2016 Amazon echo scheduler
 FROM ubuntu:14.04
 MAINTAINER Taylor Henderson <tph5595@verizon.net>
 RUN apt-get update && apt-get install git
