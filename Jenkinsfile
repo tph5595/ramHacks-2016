@@ -21,6 +21,7 @@ node {
             sh "docker build ."
           }
           dir('Cal/'){
+            sh "npm install express"
             sh "node server.js"
             sh "python "
           }
