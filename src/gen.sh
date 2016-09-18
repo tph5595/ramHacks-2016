@@ -12,4 +12,6 @@ java getIt
 for i in `cat urls.txt`
 do
 	wget $i
+	java Parse $i index.html
+	rm index.html
 done 
