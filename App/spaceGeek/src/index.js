@@ -156,7 +156,7 @@ Fact.prototype.intentHandlers = {
         var lookupCategory = (intent.slots.hackName.value).toLowerCase();
         lookupCategory = lookupCategory.replace(/\s/g, '');
         var stringResult;
-        var url = "http://127.0.0.1:8090/" + lookupCategory + ".txt";
+        var url = "http://127.0.0.1:8090/" + lookupCategory.toString() + ".txt";
         //  response.tell("working");
         http.get(url, function(res) {
             response.tell("fuck off");
@@ -172,7 +172,7 @@ Fact.prototype.intentHandlers = {
             });
         }).on('error', function(e) {
             console.log("Got error: ", e);
-            response.ask("could not find a hackathon named " + (intent.slots.hackName.value) + ". Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
+            response.ask("could not find a hackathon named " + (lookupCategory) + ". Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
         });
     },
     "GetNextEventIntent": function(intent, session, response) {
