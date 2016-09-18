@@ -236,12 +236,12 @@ function parseJson(inputText) {
     return retArr;
 }
 
-// Create the handler that responds to the Alexa Request.
+/*// Create the handler that responds to the Alexa Request.
 exports.handler = function(event, context) {
     // Create an instance of the HistoryBuff Skill.
     var skill = new HistoryBuffSkill();
     skill.execute(event, context);
-};
+};*/
 // Create the handler that responds to the Alexa Request.
 exports.handler = function(event, context) {
     // Create an instance of the SpaceGeek skill.
