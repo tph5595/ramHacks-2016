@@ -27,6 +27,7 @@ DontHearNoMore no thank you
 DontHearNoMore thats fine
 DontHearNoMore nah
 DontHearNoMore fuck off mate
+DontHearNoMore none
 
 GetNextEventIntent yes
 GetNextEventIntent yup
