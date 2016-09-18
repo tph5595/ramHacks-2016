@@ -19,7 +19,7 @@ node {
           sh "python App/test.py"
           sh "zip -r App/SpaceGeek/src/master App/spaceGeek/src/*.js"
         //  if(fileExists ('App/spaceGeek/src/*.zip')){
-            sh "rm App/spaceGeek/src/*.zip"
+            sh "rm -rf App/spaceGeek/src/*.zip"
           //}
           sh "zip -r App/SpaceGeek/src/master App/spaceGeek/src/*"
         }
