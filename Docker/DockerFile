@@ -4,7 +4,7 @@ MAINTAINER Taylor Henderson <tph5595@verizon.net>
 RUN apt-get update && apt-get install git
 RUN git clone http://github.com/tph5595/ramHacks-2016.git
 RUN cd ramHacks-2016/Regex/
-RUN python -m SimpleHTTPServer 8090 &
+RUN echo 'python -m SimpleHTTPServer 8090' >> /etc/rc.local
 RUN apt-get install -y nodejs npm
 RUN ln -s /usr/bin/nodejs /usr/bin/node
-RUN node server.js &
+RUN echo 'node server.js' >> /etc/rc.local
