@@ -159,7 +159,7 @@ Fact.prototype.intentHandlers = {
         var url = "http://45.55.81.231:8090/" + lookupCategory.toString();
         //  response.tell("working");
         http.get(url, function(res) {
-            response.tell("fuck off");
+            //response.tell("fuck off");
             var body = '';
 
             res.on('data', function(chunk) {
