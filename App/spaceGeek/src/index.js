@@ -187,16 +187,18 @@ Fact.prototype.intentHandlers = {
 
             res.on('end', function() {
                 stringResult = parseJson(body);
-                response.tell(body);
+                response.ask(body + ". Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
             });
         }).on('error', function(e) {
             console.log("Got error: ", e);
+            response.ask("could not find a hackathon named " + (intent.slots.Category) + ". Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
         });
-        //  response.tell("working");
     },
-
+    "GetNextEventIntent": function(intent, session, response) {
+        response.ask("What schedule would you like to look up?", "What schedule would you like?");
+    },
     "AMAZON.HelpIntent": function(intent, session, response) {
-        response.ask("Name the hackathon you wish to here the schedule for", "What schedule would you like?");
+        response.ask("Name the hackathon you wish to hear the schedule for", "What schedule would you like?");
     },
 
     "AMAZON.StopIntent": function(intent, session, response) {
