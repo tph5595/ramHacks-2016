@@ -88,7 +88,7 @@ Fact.prototype.intentHandlers = {
 
     "DumbStuff": function(intent, session, response) {
         var req = new XMLHttpRequest();
-        req.open('GET', 'http://vcu.edu/', false);
+        req.open('GET', 'http://ramhacks.vcu.edu/', false);
         req.send(null);
         if (req.status == 200)
             dump(req.responseText);
