@@ -19,13 +19,13 @@ HackathonName well {hackName} seems pretty awesome
 HackathonName tell me about {hackName}
 HackathonName what does the schedule look like for {hackName}
 
-AMAZON.StopIntent no
-AMAZON.StopIntent nope
-AMAZON.StopIntent no thanks
-AMAZON.StopIntent no thank you
-AMAZON.StopIntent thats fine
-AMAZON.StopIntent nah
-AMAZON.StopIntent fuck off mat
+DontHearNoMore no
+DontHearNoMore nope
+DontHearNoMore no thanks
+DontHearNoMore no thank you
+DontHearNoMore thats fine
+DontHearNoMore nah
+DontHearNoMore fuck off mate
 
 GetNextEventIntent yes
 GetNextEventIntent yup

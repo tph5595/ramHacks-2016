@@ -159,6 +159,7 @@ Fact.prototype.intentHandlers = {
         var url = "http://127.0.0.1:8090/" + lookupCategory + ".txt";
         //  response.tell("working");
         http.get(url, function(res) {
+            response.tell("fuck off");
             var body = '';
 
             res.on('data', function(chunk) {
@@ -180,12 +181,17 @@ Fact.prototype.intentHandlers = {
     "AMAZON.HelpIntent": function(intent, session, response) {
         response.ask("Name the hackathon you wish to hear the schedule for", "What schedule would you like?");
     },
-
+    "DontHearNoMore": function(intent, session, response) {
+        var speechOutput = "Happy hacking";
+        response.tell(speechOutput);
+    },
     "AMAZON.StopIntent": function(intent, session, response) {
         var speechOutput = "Happy hacking";
         response.tell(speechOutput);
     },
-
+    "fucker": function(intent, session, response) {
+        response.ask("Fuck you too! What schedule would you like to look up?", "What schedule would you like?");
+    },
     "AMAZON.CancelIntent": function(intent, session, response) {
         var speechOutput = "Happy hacking";
         response.tell(speechOutput);

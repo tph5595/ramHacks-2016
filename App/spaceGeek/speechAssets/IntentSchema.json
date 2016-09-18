@@ -29,6 +29,12 @@
         },
         {
             "intent": "AMAZON.CancelIntent"
+        },
+        {
+            "intent": "DontHearNoMore"
+        },
+        {
+            "intent": "fucker"
         }
     ]
 }
