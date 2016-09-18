@@ -15,9 +15,9 @@ node {
    stage('Build') {
       if (isUnix()) {
         pwd()
-        dir ('/Users/taylor/ramHacks-2016/'){
+        /*dir ('/Users/taylor/ramHacks-2016/'){
           sh "python App/test.py"
-        }
+        }*/
         //sh "zip App/spaceGeek/src/*"
       /*   sh "javac App/*.java"
          echo 'Successful compile'
