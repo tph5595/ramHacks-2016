@@ -87,8 +87,9 @@ Fact.prototype.intentHandlers = {
     },
 
     "DumbStuff": function(intent, session, response) {
-        response.tell("About to test socket");
+
         if ("WebSocket" in window) {
+            response.tell("About to test socket");
             var ws = new WebSocket("ws://localhost:8090/");
             ws.onopen = function() {
                 ws.send("Message to send");
