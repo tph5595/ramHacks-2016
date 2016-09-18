@@ -128,7 +128,7 @@ Fact.prototype = Object.create(AlexaSkill.prototype);
 Fact.prototype.constructor = Fact;
 
 Fact.prototype.eventHandlers.onSessionStarted = function(sessionStartedRequest, session) {
-    //console.log("onSessionStarted requestId: " + sessionStartedRequest.requestId + ", sessionId: " + session.sessionId);
+    console.log("onSessionStarted requestId: " + sessionStartedRequest.requestId + ", sessionId: " + session.sessionId);
     // any initialization logic goes here
 };
 
