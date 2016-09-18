@@ -22,6 +22,9 @@
             "intent": "AMAZON.HelpIntent"
         },
         {
+            "intent": "GetNextEventIntent"
+        },
+        {
             "intent": "AMAZON.StopIntent"
         },
         {
