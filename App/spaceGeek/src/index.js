@@ -106,8 +106,7 @@ var NAME_TO_FILE = {
     "lauzhack": "lauzhack",
     "junction": "junction",
     "hackkings": "hackkings",
-    "hacknotts": "hacknotts",
-    hello: "hello"
+    "hacknotts": "hacknotts"
 };
 
 /**
@@ -173,7 +172,7 @@ Fact.prototype.intentHandlers = {
             });
         }).on('error', function(e) {
             console.log("Got error: ", e);
-            response.ask("could not find a hackathon named " + (lookupCategory) + ". Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
+            response.ask("could not find a hackathon named " + (url) + ". Would you like to look up another hackathon?", "Would you like to look up another hackathon?");
         });
     },
     "GetNextEventIntent": function(intent, session, response) {
