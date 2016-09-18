@@ -8,3 +8,5 @@ RUN echo 'python -m SimpleHTTPServer 8090' >> /etc/rc.local
 RUN apt-get install -y nodejs npm
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN echo 'node server.js' >> /etc/rc.local
+RUN apt-get install -y python
+RUN echo 'python gen.py' >> /etc/rc.local
