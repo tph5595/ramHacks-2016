@@ -4,7 +4,7 @@ node {
       echo 'Pulling latest code'
       checkout scm
       echo 'changing status to pending'
-      step([$class: 'GitHubSetCommitStatusBuilder'])
+      //step([$class: 'GitHubSetCommitStatusBuilder'])
    }
    stage('Build') {
       if (isUnix()) {
