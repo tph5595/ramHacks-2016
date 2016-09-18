@@ -12,10 +12,6 @@
  * This simple sample has no external dependencies or session management, and shows the most basic
  * example of how to create a Lambda function for handling Alexa Skill requests.
  *
- * Examples:
- * One-shot model:
- *  User: "Alexa, ask Space Geek for a space fact"
- *  Alexa: "Here's your space fact: ..."
  */
 
 /**
