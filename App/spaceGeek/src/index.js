@@ -25,6 +25,10 @@ var APP_ID = undefined; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-u
 
 var https = require('https');
 /**
+ * Variable defining the length of the delimiter between events
+ */
+var delimiterSize = 2;
+/**
  * Array containing space facts.
  */
 var FACTS = [
