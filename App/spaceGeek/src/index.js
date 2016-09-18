@@ -195,6 +195,14 @@ Fact.prototype.intentHandlers = {
     "AMAZON.CancelIntent": function(intent, session, response) {
         var speechOutput = "Happy hacking";
         response.tell(speechOutput);
+    },
+    "GetCalendarIntent": function(intent, session, response) {
+        var speechOutput = "Your calendar";
+        response.tell(speechOutput);
+    },
+    "sendCalendarIntent": function(intent, session, response) {
+        var speechOutput = "Your new calendar data is synced with your phone";
+        response.tell(speechOutput);
     }
 };
 
