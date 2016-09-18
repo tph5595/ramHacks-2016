@@ -4,21 +4,23 @@
 var delimiterSize = 2;
 var https = require('https');
 var http = require('http');
-var stringResult = "before";
+//var stringResult = "before";
+//var body = "";
 var url = "https://www.bigredhacks.com/";
+
+var stringResult;
+//var url = "http://127.0.0.1:8090/";
 https.get(url, function(res) {
-    var body = "";
+    var body = '';
 
     res.on('data', function(chunk) {
-        body = body + chunk;
-        console.log("here" + chunk);
+        body += chunk;
     });
 
     res.on('end', function() {
         stringResult = parseJson(body);
-        //eventCallback(stringResult);
+        console.log(body);
     });
-    console.log(parseJson(body));
 }).on('error', function(e) {
     console.log("Got error: ", e);
 });

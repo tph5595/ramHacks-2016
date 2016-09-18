@@ -24,6 +24,7 @@
 var APP_ID = undefined; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 
 var https = require('https');
+var http = require('http');
 /**
  * Variable defining the length of the delimiter between events
  */
@@ -93,8 +94,8 @@ Fact.prototype.intentHandlers = {
 
     "HackathonName": function(intent, session, response) {
         var stringResult;
-        var url = "https://ramhacks.vcu.edu/";
-        https.get(url, function(res) {
+        var url = "http://127.0.0.1:8090/";
+        http.get(url, function(res) {
             var body = '';
 
             res.on('data', function(chunk) {
@@ -103,11 +104,12 @@ Fact.prototype.intentHandlers = {
 
             res.on('end', function() {
                 stringResult = parseJson(body);
+                response.tell(body);
             });
         }).on('error', function(e) {
             console.log("Got error: ", e);
         });
-        response.tell("working");
+        //  response.tell("working");
     },
 
     "AMAZON.HelpIntent": function(intent, session, response) {
