@@ -230,7 +230,7 @@ Fact.prototype.intentHandlers = {
             });
         }).on('error', function(e) {
             console.log("Got error: ", e);
-            response.ask("unable to add " + lookupCategory + " to your calendar", "Would you like to look up another hackathon?");
+            response.ask("fuck you unable to add " + lookupCategory + " to your calendar", "Would you like to look up another hackathon?");
         });
         //TODO need to parse more here
         url = "http://45.55.81.231:8081/p?name=" + lookupCategory.toString();

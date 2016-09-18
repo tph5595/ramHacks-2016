@@ -38,7 +38,7 @@ GetNextEventIntent i guess so
 
 GetCalendarIntent add {hackName} to my calendar
 GetCalendarIntent remind me of {hackName}
-GetCalendarIntent save {hackName}
+GetCalendarIntent poop in my face {hackName}
 
 sendCalendarIntent push my data to my phone please
 sendCalendarIntent can you send that to my phone
