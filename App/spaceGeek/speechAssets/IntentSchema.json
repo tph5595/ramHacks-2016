@@ -10,7 +10,13 @@
             "intent": "GetNewFactIntent"
         },
         {
-            "intent": "DumbStuff"
+            "intent": "HackathonName",
+            "slots": [
+              {
+                "name": "hackName",
+                "type": "HACKATHON_NAMES"
+              }
+            ]
         },
         {
             "intent": "AMAZON.HelpIntent"
