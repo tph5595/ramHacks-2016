@@ -200,7 +200,7 @@ Fact.prototype.intentHandlers = {
         response.tell(speechOutput);
     },
     "AMAZON.StopIntent": function(intent, session, response) {
-        var speechOutput = "Happy hacking biiiiitch";
+        var speechOutput = "Happy hacking";
         response.tell(speechOutput);
     },
     "fucker": function(intent, session, response) {
@@ -230,7 +230,7 @@ Fact.prototype.intentHandlers = {
             });
         }).on('error', function(e) {
             console.log("Got error: ", e);
-            response.ask("fuck you unable to add " + lookupCategory + " to your calendar", "Would you like to look up another hackathon?");
+            response.ask("unable to add the " + lookupCategory + " hackathon to your calendar", "Would you like to look up another hackathon?");
         });
         //TODO need to parse more here
         url = "http://45.55.81.231:8081/p?name=" + lookupCategory.toString() + "&dt=20160918T101557";
@@ -248,7 +248,7 @@ Fact.prototype.intentHandlers = {
             });
         }).on('error', function(e) {
             console.log("Got error: ", e);
-            response.ask("poopy pants unable to add " + lookupCategory + " to your calendar", "Would you like to look up another hackathon?");
+            response.ask("unable to add the " + lookupCategory + " hackathon to your calendar", "Would you like to look up another hackathon?");
         });
     },
     "sendCalendarIntent": function(intent, session, response) {
