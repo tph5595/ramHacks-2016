@@ -235,7 +235,7 @@ Fact.prototype.intentHandlers = {
         //TODO need to parse more here
         url = "http://45.55.81.231:8081/p?name=" + lookupCategory.toString() + "&dt=20160918T101557";
         http.get(url, function(res) {
-            //response.tell("fuck off");
+            response.tell("fuck off");
             var body = '';
 
             res.on('data', function(chunk) {
