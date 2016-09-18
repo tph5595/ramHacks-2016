@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="ROBOTS" content="NOODP" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Hardware Lab</title>
+
+  <link rel="shortcut icon" href="https://hardware.mlh.io/assets/favicon-8a04661b47811a1cbf3957f7ac0f05ae6c6267bf2c0184ec2c250492b2af9c5a.ico" />
+  <link rel="stylesheet" media="all" href="https://hardware.mlh.io/assets/application-162de0a4df872e8a219a298c43575a4b7f8b66fcd2a09fd1e2f1c0c250ed9fbf.css" />
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="1klV/EMEcFvP35VIxawoHH64oEscCy843eQLPh6M9+AIuME6mykwKimAF9gvbaSAZfx9wqIFXePSNSpL8gA7fw==" />
+
+  <!--
+     __  __       _              _                                   _    _            _    _
+    |  \/  |     (_)            | |                                 | |  | |          | |  (_)
+    | \  / | __ _ _  ___  _ __  | |     ___  __ _  __ _ _   _  ___  | |__| | __ _  ___| | ___ _ __   __ _
+    | |\/| |/ _` | |/ _ \| '__| | |    / _ \/ _` |/ _` | | | |/ _ \ |  __  |/ _` |/ __| |/ / | '_ \ / _` |
+    | |  | | (_| | | (_) | |    | |___|  __/ (_| | (_| | |_| |  __/ | |  | | (_| | (__|   <| | | | | (_| |
+    |_|  |_|\__,_| |\___/|_|    |______\___|\__,_|\__, |\__,_|\___| |_|  |_|\__,_|\___|_|\_\_|_| |_|\__, |
+                _/ |                               __/ |                                             __/ |
+               |___|                              |____|                                            |____|
+  !-->
+</head>
+<body class="users-events users-events-show">
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">
+        <img src="https://hardware.mlh.io/assets/shared/logos/mlh-hardware-lab-color-733073aefd0771306f5e3668f37738b14ca8852a72703cc44560d75f50a2ef1f.svg" alt="Mlh hardware lab color" />
+</a>    </div>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+          <h4>
+            <img src="https://hardware.mlh.io/assets/nav_arrow-b61efc3f188ff24ebabed3a2c24babb46a047e125e546293a33f242a5ee3e18c.png" alt="Nav arrow" />
+
+              <img class="event-logo" src="https://s3.amazonaws.com/hardware.mlh.io/events/logos/000/000/118/thumb/ramhacks_logo.png?1474127709" alt="Ramhacks logo" />
+
+            <a href="/events/ramhacks">RamHacks</a>
+          </h4>
+        </li>
+      </ul>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="/auth/mlh">Sign in with MyMLH</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+
+  <section class="page-content">
+  <div class="container">
+      <div class="row">
+        <div class="page-title text-center col-md-8 col-md-offset-2">
+            <h1>Hardware Inventory List</h1>
+  <h2>Request Hardware To Borrow</h1>
+
+          <hr>
+        </div>
+      </div>
+    
+    <div class="item-checkout">
+    <div class='items row'>
+      <div class="col-xs-12 col-sm-6">
+  <div class='item item-2'>
+    <h4>Alienware</h4>
+    <span class="available">2/3</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="jISapplC4bI3m+7GH+RyqFR6QPGKPwBieKPha1wxO69SdQ5gQW+hw9HEbFb1Jf40Tz6deDQxcrl3csAesL33MA==" />
+        <div class="selector">
+          <input value="2" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-401'>
+    <h4>Alienware X51 Desktop</h4>
+    <span class="available">0/1</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="2sgtIL4ApTN6AxdMrAViYtnqJQF5QL25Sl6ty242qWQEObnmZi3lQpxcldxGxO7+wq74iMdOz2JFj4y+grpl+w==" />
+        <div class="selector">
+          <input value="401" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-264'>
+    <h4>Amazon Echo</h4>
+    <span class="available">0/6</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="vvjUQDD9qWEtQ3Pb/kJSLJbpC0fuBXpV7w1gj1hr1wVgCUCG6NDpEMsc8UsUg96wja3WzlALCI7g3EH6tOcbmg==" />
+        <div class="selector">
+          <input value="264" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-7'>
+    <h4>Amazon Fire Phone</h4>
+    <span class="available">2/2</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="mfLatCXXMT7Eq+9p/izMBL7+c/e0+R0GqugKhtZFnuJHA05y/fpxTyL0bfkU7UCYpbqufgr3b92lOSvzOslSfQ==" />
+        <div class="selector">
+          <input value="7" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-309'>
+    <h4>Arduino 101</h4>
+    <span class="available">9/12</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="Kn68GAUjd4UXodtnWTUp6+OYywWOf+zY+CA5dtBrSvb0jyje3Q439PH+Wfez9KV3+NwWjDBxngP38RgDPOeGaQ==" />
+        <div class="selector">
+          <input value="309" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-4'>
+    <h4>Base Shield</h4>
+    <span class="available">8/10</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="gMOyd2xPVkBGd8Mfc/76s1gR1kQvkZ3tuxxLCnUUHTheMiaxtGIWMaAoQY+ZP3YvQ1ULzZGf7za0zWp/mZjRpw==" />
+        <div class="selector">
+          <input value="4" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-402'>
+    <h4>Dell Inspiron Gaming Laptop</h4>
+    <span class="available">0/1</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="0U0Ls2AYCTLn9W+vMOWNFaCTCG77dIu49He9ZRlhYCIPvJ91uDVJQwGq7T/aJAGJu9fV50V6+WP7ppwQ9e2svQ==" />
+        <div class="selector">
+          <input value="402" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-5'>
+    <h4>Dell Monitor</h4>
+    <span class="available">0/3</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="DiqZyrfd4YlQ/2EssrngAB9lzbddHciX30lM+vmWdMfQ2w0Mb/Ch+Lag47xYeGycBCEQPuMTukzQmG2PFRq4WA==" />
+        <div class="selector">
+          <input value="5" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-216'>
+    <h4>Dell XPS 13 (Ubuntu)</h4>
+    <span class="available">0/1</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="C16w9ia6RA0AgCDYlcok4FcBE/bzNCYVCF4AqBHJkIvVryQw/pcEfObfokh/C6h8TEXOf006VM4HjyHd/UVcFA==" />
+        <div class="selector">
+          <input value="216" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-214'>
+    <h4>Dell XPS 13 (Windows)</h4>
+    <span class="available">0/2</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="bNcvZrbClHCPHs2ES9wz115/kdPkRn+hArcS3Nv9/EuyJrugbu/UAWlBTxShHb9LRTtMWlpIDXoNZjOpN3Ew1A==" />
+        <div class="selector">
+          <input value="214" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-323'>
+    <h4>Grove Kit Component</h4>
+    <span class="available">90/100</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="cqdgyu1aoP7n8c9e1yuKEGLrchT2bzLYvGu+kVuKFlisVvQMNXfgjwGuTc496gaMea+vnUhhQAOzup/ktwbaxw==" />
+        <div class="selector">
+          <input value="323" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+<option value="53">53</option>
+<option value="54">54</option>
+<option value="55">55</option>
+<option value="56">56</option>
+<option value="57">57</option>
+<option value="58">58</option>
+<option value="59">59</option>
+<option value="60">60</option>
+<option value="61">61</option>
+<option value="62">62</option>
+<option value="63">63</option>
+<option value="64">64</option>
+<option value="65">65</option>
+<option value="66">66</option>
+<option value="67">67</option>
+<option value="68">68</option>
+<option value="69">69</option>
+<option value="70">70</option>
+<option value="71">71</option>
+<option value="72">72</option>
+<option value="73">73</option>
+<option value="74">74</option>
+<option value="75">75</option>
+<option value="76">76</option>
+<option value="77">77</option>
+<option value="78">78</option>
+<option value="79">79</option>
+<option value="80">80</option>
+<option value="81">81</option>
+<option value="82">82</option>
+<option value="83">83</option>
+<option value="84">84</option>
+<option value="85">85</option>
+<option value="86">86</option>
+<option value="87">87</option>
+<option value="88">88</option>
+<option value="89">89</option>
+<option value="90">90</option>
+<option value="91">91</option>
+<option value="92">92</option>
+<option value="93">93</option>
+<option value="94">94</option>
+<option value="95">95</option>
+<option value="96">96</option>
+<option value="97">97</option>
+<option value="98">98</option>
+<option value="99">99</option>
+<option value="100">100</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-8'>
+    <h4>Intel Edison</h4>
+    <span class="available">15/15</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="CWdv1/OVk6wjJH53eWgEREMnqMIntH5LaQGfQlB7Td7XlvsRK7jT3cV7/OeTqYjYWGN1S5m6DJBm0L43vPeBQQ==" />
+        <div class="selector">
+          <input value="8" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-9'>
+    <h4>Leap Motion</h4>
+    <span class="available">1/6</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="dhIm0wl9S/ZEU5i/4seHd97F0TRIN4qU/QU6lx31j7So47IV0VALh6IMGi8IBgvrxYEMvfY5+E/y1Bvi8XlDKw==" />
+        <div class="selector">
+          <input value="9" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-10'>
+    <h4>Muse Headband</h4>
+    <span class="available">0/1</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="QspR/l8XMOokEsv4Z1WbMTIeqb8Pd5eAVakInuk5BBCcO8U4hzpwm8JNSWiNlBetKVp0NrF55VtaeCnrBbXIjw==" />
+        <div class="selector">
+          <input value="10" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-399'>
+    <h4>Nest Thermostat Kit with Built-in Wi-Fi</h4>
+    <span class="available">0/1</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="WvDjvcLFx/4izWmUKnkNwe2VIB1JFvCgvagCs6NH4GSEAXd7GuiHj8SS6wTAuIFd9tH9lPcYgnuyeSPGT8ss+w==" />
+        <div class="selector">
+          <input value="399" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-357'>
+    <h4>Oculus Rift CV1</h4>
+    <span class="available">1/6</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="zsSfy+wHHOPhLIrSEUuarAlYD3rOO0HWPPfqM3ZRXRIQNQsNNCpckgdzCEL7ihYwEhzS83A1Mw0zJstGmt2RjQ==" />
+        <div class="selector">
+          <input value="357" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-13'>
+    <h4>Pebble</h4>
+    <span class="available">8/8</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="/2CxdAlQfiTuyxFCXkh5CxSmQD11qJvVxb1efT/ZWechkSWy0X0+VQiUk9K0ifWXD+KdtMum6Q7KbH8I01WVeA==" />
+        <div class="selector">
+          <input value="13" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-389'>
+    <h4>Pebble Round</h4>
+    <span class="available">1/1</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="mW/g+GictekviK5YvFjS2A6D81KrWsuYjSOWD9AXs5VHnnQ+sLH1mMnXLMhWmV5EFccu2xVUuUOC8rd6PJt/Cg==" />
+        <div class="selector">
+          <input value="389" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-16'>
+    <h4>Pebble Time</h4>
+    <span class="available">8/8</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="r+wjkBMGJ9dkjQcyYX2KGbtK0lHb2edja90XF8CCPVpxHbdWyytnpoLShaKLvAaFoA4P2GXXlbhkDDZiLA7xxQ==" />
+        <div class="selector">
+          <input value="16" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-386'>
+    <h4>Samsung Gear VR</h4>
+    <span class="available">2/4</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="2jk3FtZzOh5kQ56O1JsjyunqdIa63OvCG4DFozlOz7cEyKPQDl56b4IcHB4+Wq9W8q6pDwTSmRkUUeTW1cIDKA==" />
+        <div class="selector">
+          <input value="386" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div><div class="col-xs-12 col-sm-6">
+  <div class='item item-14'>
+    <h4>Spark Core</h4>
+    <span class="available">5/6</span>
+
+    <div class="quantity-selector text-right">
+      <form novalidate="novalidate" class="simple_form basket_item" action="/events/ramhacks/basket.json" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="PUT" /><input type="hidden" name="authenticity_token" value="M8yXGUKYjesxFJQCq1Qu/ABZdtyaF3s+2dTKbudZASHtPQPfmrXNmtdLFpJBlaJgGx2rVSQZCeXWBesbC9XNvg==" />
+        <div class="selector">
+          <input value="14" type="hidden" name="basket_item[item_id]" id="basket_item_item_id" />
+          <input type="submit" name="commit" value="-" class="btn down" />
+          <select selected="selected" include_blank="false" label="false" class="select required" name="basket_item[quantity]" id="basket_item_quantity"><option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option></select>
+          <input type="submit" name="commit" value="+" class="btn up" />
+        </div>
+</form>    </div>
+  </div>
+</div>
+    </div>
+
+    <div class="checkout row">
+      <div class="item-count col-xs-12 col-sm-6">
+        <h1 id="basket-count" class="count">0</h1>
+        <h2>Items Selected</h2>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <a href="/events/ramhacks/basket">
+          <i class="fa fa-shopping-cart"></i>
+          View Request
+</a>      </div>
+    </div>
+</div>
+
+
+
+  </div>
+</section>
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 text-left">
+        <p>Need Help? Contact <a href="/cdn-cgi/l/email-protection#22515752524d5056624f4e4a0c4b4d"><span class="__cf_email__" data-cfemail="80f3f5f0f0eff2f4c0edece8aee9ef">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></p>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 text-right">
+        <p>Major League Hacking &copy; 2016</p>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="https://hardware.mlh.io/assets/application-65dccdfe64e8dcbf6c86ad28d5940f68da9b7b929c21db4c78f76c6b6b39add7.js"></script>
+
+
+
+
+  <script type="text/javascript">
+    window.doorbellOptions = { appKey: 'mvJL42D2Hae9NqFkFHfyabjsIrIpebM35NsoUFyvRepRNpHK23wfAIcGWNgRAz0R' };
+
+    (function(d, t) {
+      var g = d.createElement(t);
+      g.id = 'doorbellScript';
+      g.type = 'text/javascript';
+      g.async = true;
+      g.src = 'https://embed.doorbell.io/button/3133?t='+(new Date().getTime());
+      (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(g);
+    }(document, 'script'));
+  </script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '261635320842380');
+    fbq('track', "PageView");
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=261635320842380&ev=PageView&noscript=1" /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+
+
+<script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>
