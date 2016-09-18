@@ -16,7 +16,7 @@ https.get(url, function(res) {
         stringResult = parseJson(body);
         //eventCallback(stringResult);
     });
-    console.log(stringResult);
+    console.log(parseJson(body));
 }).on('error', function(e) {
     console.log("Got error: ", e);
 });
