@@ -36,9 +36,9 @@ GetNextEventIntent why not
 GetNextEventIntent mm
 GetNextEventIntent i guess so
 
-GetCalendarIntent what do i have going on
-GetCalendarIntent whats on my schedule
-GetCalendarIntent whats on my hackathon schedule
+GetCalendarIntent add {hackName} to my calendar
+GetCalendarIntent remind me of {hackName}
+GetCalendarIntent save {hackName}
 
 sendCalendarIntent push my data to my phone please
 sendCalendarIntent can you send that to my phone
