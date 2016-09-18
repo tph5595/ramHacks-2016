@@ -3,7 +3,7 @@
  */
 var delimiterSize = 2;
 var https = require('https');
-var stringResult;
+var stringResult = "before";
 var url = "https://ramhacks.vcu.edu/";
 https.get(url, function(res) {
     var body = '';
