@@ -106,7 +106,8 @@ var NAME_TO_FILE = {
     "lauzhack": "lauzhack",
     "junction": "junction",
     "hackkings": "hackkings",
-    "hacknotts": "hacknotts"
+    "hacknotts": "hacknotts",
+    hello: "hello"
 };
 
 /**
