@@ -7,7 +7,7 @@ var http = require('http');
 var stringResult = "before";
 var url = "https://ramhacks.vcu.edu/";
 https.get(url, function(res) {
-    var body = '';
+    var body = "";
 
     res.on('data', function(chunk) {
         body = body + chunk;
