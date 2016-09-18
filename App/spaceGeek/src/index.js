@@ -23,6 +23,7 @@
  */
 var APP_ID = undefined; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 
+var https = require('https');
 /**
  * Array containing space facts.
  */
@@ -87,13 +88,23 @@ Fact.prototype.intentHandlers = {
     },
 
     "DumbStuff": function(intent, session, response) {
-        var req = new XMLHttpRequest();
-        req.open('GET', 'http://ramhacks.vcu.edu/', false);
-        req.send(null);
-        if (req.status == 200)
-            dump(req.responseText);
-        response.tellWithCard("working", "Hello World", "working");
+        var stringResult;
+        var url = "http://ramhacks.vcu.edu/"
+        https.get(url, function(res) {
+            var body = '';
 
+            res.on('data', function(chunk) {
+                body += chunk;
+            });
+
+            res.on('end', function() {
+                var stringResult = parseJson(body);
+                //eventCallback(stringResult);
+            });
+        }).on('error', function(e) {
+            console.log("Got error: ", e);
+        });
+        response.tell("working")
     },
 
     "AMAZON.HelpIntent": function(intent, session, response) {
