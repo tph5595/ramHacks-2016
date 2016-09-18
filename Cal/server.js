@@ -9,5 +9,5 @@ app.get('/p', function(req, res) {
     res.send(req.query.name + "\t" + req.query.dt);
 });
 app.listen(8081, function() {
-    console.log('Example app listening on port 8081!');
+    console.log('Cal listening on port 8081!');
 });
