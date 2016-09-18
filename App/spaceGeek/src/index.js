@@ -28,6 +28,7 @@ var delimiterSize = 2;
 /*
  * All of the good good stuff
  */
+/*
 var NAME_TO_FILE = {
         "hackmty": "hackmty",
         "bigredhacks": "bigredhacks",
