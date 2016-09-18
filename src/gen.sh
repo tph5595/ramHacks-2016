@@ -5,7 +5,7 @@ docker rm $(docker ps -a -q)
 # Delete all images
 docker rmi $(docker images -q)
 docker build tph5595:v1 .
-rm index.h*
+rm index.*
 rm *.txt
 rm *.class
 javac *.java
@@ -15,4 +15,5 @@ do
 	wget $i
 	java Parse $i index.html
 	rm index.html
-done 
+done
+cp *.txt ../Regex/
